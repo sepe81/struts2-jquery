@@ -236,9 +236,6 @@
 					<plugin>
 						<artifactId>maven-gpg-plugin</artifactId>
 					</plugin>
-					<plugin>
-						<artifactId>maven-source-plugin</artifactId>
-					</plugin>
 				</plugins>
 				<pluginManagement>
 					<plugins>
