@@ -11,6 +11,8 @@ import com.opensymphony.xwork2.util.ValueStack;
 import org.apache.struts2.conversion.StrutsTypeConverterHolder;
 import org.apache.struts2.ognl.StrutsOgnlGuard;
 import org.junit.jupiter.api.BeforeEach;
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockHttpServletResponse;
 
 public abstract class AbstractComponentBaseTest {
 
@@ -27,6 +29,10 @@ public abstract class AbstractComponentBaseTest {
     @BeforeEach
     void setUpValueStack() {
         valueStack = new TestOgnlValueStack();
+        valueStack.getActionContext()
+                .withServletRequest(new MockHttpServletRequest())
+                .withServletResponse(new MockHttpServletResponse())
+                .bind();
     }
 
     static class TestOgnlValueStack extends OgnlValueStack {
