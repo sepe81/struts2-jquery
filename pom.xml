@@ -79,17 +79,16 @@
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 		<!-- plugin versions -->
-		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
-		<maven-release-plugin.version>3.0.1</maven-release-plugin.version>
-		<maven-deploy-plugin.version>3.1.2</maven-deploy-plugin.version>
-		<maven-javadoc-plugin.version>3.8.0</maven-javadoc-plugin.version>
-		<maven-source-plugin.version>3.3.1</maven-source-plugin.version>
-		<maven-gpg-plugin.version>3.2.4</maven-gpg-plugin.version>
-		<maven-war-plugin.version>3.4.0</maven-war-plugin.version>
-		<maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
 		<jetty.plugin.version>9.4.55.v20240627</jetty.plugin.version>
-		<maven-surefire-plugin.version>3.3.1</maven-surefire-plugin.version>
+		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+		<maven-deploy-plugin.version>3.1.2</maven-deploy-plugin.version>
+		<maven-gpg-plugin.version>3.2.4</maven-gpg-plugin.version>
+		<maven-javadoc-plugin.version>3.8.0</maven-javadoc-plugin.version>
 		<maven-release-plugin.version>3.1.1</maven-release-plugin.version>
+		<maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+		<maven-source-plugin.version>3.3.1</maven-source-plugin.version>
+		<maven-surefire-plugin.version>3.3.1</maven-surefire-plugin.version>
+		<maven-war-plugin.version>3.4.0</maven-war-plugin.version>
 		<!-- dependency versions -->
 		<struts2.version>6.4.0</struts2.version>
 		<tlib.version>2.3</tlib.version>
@@ -169,14 +168,6 @@
 					</configuration>
 				</plugin>
 				<plugin>
-					<artifactId>maven-release-plugin</artifactId>
-					<version>${maven-release-plugin.version}</version>
-					<configuration>
-						<tagNameFormat>@{project.version}</tagNameFormat>
-						<autoVersionSubmodules>true</autoVersionSubmodules>
-					</configuration>
-				</plugin>
-				<plugin>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<version>${maven-deploy-plugin.version}</version>
 				</plugin>
@@ -219,9 +210,11 @@
 					<artifactId>maven-release-plugin</artifactId>
 					<version>${maven-release-plugin.version}</version>
 					<configuration>
-						<useReleaseProfile>false</useReleaseProfile>
-						<goals>deploy</goals>
 						<arguments>-Prelease ${arguments}</arguments>
+						<autoVersionSubmodules>true</autoVersionSubmodules>
+						<goals>deploy</goals>
+						<tagNameFormat>@{project.version}</tagNameFormat>
+						<useReleaseProfile>false</useReleaseProfile>
 					</configuration>
 				</plugin>
 			</plugins>
