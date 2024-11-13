@@ -36,7 +36,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: 17
-        distribution: adopt
+        distribution: temurin
         cache: maven
         server-id: struts2-jquery.snapshots
         server-username: MAVEN_USERNAME
