@@ -79,8 +79,12 @@ To access SNAPSHOT builds, you need to declare the snapshot repository lookup in
         <id>sonatype.oss.snapshots</id>
         <name>Sonatype OSS Snapshot Repository</name>
         <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-        <releases>false</releases>
-        <snapshots>true</snapshots>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
     </repository>
 </repositories>
 ...
