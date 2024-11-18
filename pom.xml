@@ -74,10 +74,9 @@
 
 	<properties>
 		<currentVersion>${project.version}</currentVersion>
-		<java.version>17</java.version>
+		<java.version>8</java.version>
+		<maven.compiler.release>${java.version}</maven.compiler.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>17</maven.compiler.source>
-		<maven.compiler.target>17</maven.compiler.target>
 		<!-- plugin versions -->
 		<jetty.plugin.version>9.4.56.v20240826</jetty.plugin.version>
 		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
@@ -164,8 +163,6 @@
 					<version>${maven-compiler-plugin.version}</version>
 					<configuration>
 						<forceJavacCompilerUse>true</forceJavacCompilerUse>
-						<source>${java.version}</source>
-						<target>${java.version}</target>
 					</configuration>
 				</plugin>
 				<plugin>
