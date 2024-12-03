@@ -18,16 +18,16 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 </div>
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_${escapedOptionId} = {};
-	options_${escapedOptionId}.value = ${parameters.value!'0'};
-<#include "/${parameters.templateDir}/jquery/base.ftl" />
-<#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-<#include "/${parameters.templateDir}/jquery/topics.ftl" />
+	options_${escapedOptionId}.value = ${attributes.value!'0'};
+<#include "/${attributes.templateDir}/jquery/base.ftl" />
+<#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+<#include "/${attributes.templateDir}/jquery/topics.ftl" />
 
-<#include "/${parameters.templateDir}/jquery/jquery-ui-bind.ftl" />
+<#include "/${attributes.templateDir}/jquery/jquery-ui-bind.ftl" />
  });
 </@s.script>

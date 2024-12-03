@@ -18,28 +18,28 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
-  <#if parameters.selectable!false>
+<#assign escapedOptionId="${attributes.escapedId}">
+  <#if attributes.selectable!false>
 	options_${escapedOptionId}.selectable = true;<#rt/>
    </#if>
-  <#if parameters.selectableOptions! != "">
- 	options_${escapedOptionId}.selectableoptions = "<#outputformat "JavaScript">${parameters.selectableOptions}</#outputformat>";<#rt/>
+  <#if attributes.selectableOptions! != "">
+ 	options_${escapedOptionId}.selectableoptions = "<#outputformat "JavaScript">${attributes.selectableOptions}</#outputformat>";<#rt/>
    </#if>
-  <#if parameters.selectableOnSelectedTopics! != "">
- 	options_${escapedOptionId}.selectableonselectedtopics = "${parameters.selectableOnSelectedTopics}";<#rt/>
+  <#if attributes.selectableOnSelectedTopics! != "">
+ 	options_${escapedOptionId}.selectableonselectedtopics = "${attributes.selectableOnSelectedTopics}";<#rt/>
    </#if>
-  <#if parameters.selectableOnSelectingTopics! != "">
- 	options_${escapedOptionId}.selectableonselectingtopics = "${parameters.selectableOnSelectingTopics}";<#rt/>
+  <#if attributes.selectableOnSelectingTopics! != "">
+ 	options_${escapedOptionId}.selectableonselectingtopics = "${attributes.selectableOnSelectingTopics}";<#rt/>
    </#if>
-  <#if parameters.selectableOnStartTopics! != "">
- 	options_${escapedOptionId}.selectableonstarttopics = "${parameters.selectableOnStartTopics}";<#rt/>
+  <#if attributes.selectableOnStartTopics! != "">
+ 	options_${escapedOptionId}.selectableonstarttopics = "${attributes.selectableOnStartTopics}";<#rt/>
    </#if>
-  <#if parameters.selectableOnStopTopics! != "">
- 	options_${escapedOptionId}.selectableonstoptopics = "${parameters.selectableOnStopTopics}";<#rt/>
+  <#if attributes.selectableOnStopTopics! != "">
+ 	options_${escapedOptionId}.selectableonstoptopics = "${attributes.selectableOnStopTopics}";<#rt/>
    </#if>
-  <#if parameters.selectableOnUnselectedTopics! != "">
- 	options_${escapedOptionId}.selectableonunselectedtopics = "${parameters.selectableOnUnselectedTopics}";<#rt/>
+  <#if attributes.selectableOnUnselectedTopics! != "">
+ 	options_${escapedOptionId}.selectableonunselectedtopics = "${attributes.selectableOnUnselectedTopics}";<#rt/>
    </#if>
-  <#if parameters.selectableOnUnselectingTopics! != "">
- 	options_${escapedOptionId}.selectableonunselectingtopics = "${parameters.selectableOnUnselectingTopics}";<#rt/>
+  <#if attributes.selectableOnUnselectingTopics! != "">
+ 	options_${escapedOptionId}.selectableonunselectingtopics = "${attributes.selectableOnUnselectingTopics}";<#rt/>
    </#if>

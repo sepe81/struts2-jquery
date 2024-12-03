@@ -18,25 +18,25 @@
  * under the License.
  */
 -->
-<#if (actionMessages?? && actionMessages?size > 0 && !parameters.isEmptyList)>
-<div 
-<#if parameters.id?if_exists != "">
- id="${parameters.id}"<#rt/>
+<#if (actionMessages?? && actionMessages?size > 0 && !attributes.isEmptyList)>
+<div
+<#if attributes.id?if_exists != "">
+ id="${attributes.id}"<#rt/>
 </#if>
-<#if parameters.cssClass??>
- class="ui-widget ${parameters.cssClass}"<#rt/>
+<#if attributes.cssClass??>
+ class="ui-widget ${attributes.cssClass}"<#rt/>
 <#else>
  class="ui-widget actionMessage"<#rt/>
 </#if>
-<#if parameters.cssStyle??>
- style="${parameters.cssStyle}"<#rt/>
+<#if attributes.cssStyle??>
+ style="${attributes.cssStyle}"<#rt/>
 </#if>
 >
-	<div class="ui-state-highlight ui-corner-all" style="padding: 0.3em 0.7em; margin-top: 20px;"> 
+	<div class="ui-state-highlight ui-corner-all" style="padding: 0.3em 0.7em; margin-top: 20px;">
 		<#list actionMessages as message>
             <#if message?if_exists != "">
 		<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: 0.3em;"></span>
-		<span><#if parameters.escape>${message!}<#else>${message!}</#if></span></p>
+		<span><#if attributes.escape>${message!}<#else>${message!}</#if></span></p>
             </#if>
 		</#list>
 	</div>

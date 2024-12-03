@@ -1,3 +1,3 @@
 [#ftl]
 [#-- @implicitly included --]
-[#-- @ftlvariable name="parameters" type="java.util.Map" --]
+[#-- @ftlvariable name="attributes" type="java.util.Map" --]

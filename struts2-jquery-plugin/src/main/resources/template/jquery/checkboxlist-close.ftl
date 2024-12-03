@@ -18,43 +18,43 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_${escapedOptionId} = {};
-<#if parameters.nameValue??>
-	options_${escapedOptionId}.value = "<@s.property value="parameters.nameValue"/>";
+<#if attributes.nameValue??>
+	options_${escapedOptionId}.value = "<@s.property value="attributes.nameValue"/>";
 </#if>
-<#if parameters.remoteList??>
+<#if attributes.remoteList??>
 	options_${escapedOptionId}.datatype = "json";
 	options_${escapedOptionId}.type = 'checkbox';
-	options_${escapedOptionId}.list = "${parameters.remoteList}";
+	options_${escapedOptionId}.list = "${attributes.remoteList}";
 </#if>
-<#if parameters.remoteListKey??>
-	options_${escapedOptionId}.listkey = "${parameters.remoteListKey}";
+<#if attributes.remoteListKey??>
+	options_${escapedOptionId}.listkey = "${attributes.remoteListKey}";
 </#if>
-<#if parameters.remoteListValue??>
-	options_${escapedOptionId}.listvalue = "${parameters.remoteListValue}";
+<#if attributes.remoteListValue??>
+	options_${escapedOptionId}.listvalue = "${attributes.remoteListValue}";
 </#if>
-<#if parameters.buttonset!true>
+<#if attributes.buttonset!true>
 	options_${escapedOptionId}.buttonset = true;
 <#else>
 	options_${escapedOptionId}.buttonset = false;
 </#if>
-<#if parameters.icon!true>
+<#if attributes.icon!true>
     options_${escapedOptionId}.icon = true;
 <#else>
     options_${escapedOptionId}.icon = false;
 </#if>
-<#if parameters.direction??>
-    options_${escapedOptionId}.direction = "${parameters.direction}";
+<#if attributes.direction??>
+    options_${escapedOptionId}.direction = "${attributes.direction}";
 </#if>
-  <#include "/${parameters.templateDir}/jquery/base.ftl" />
-  <#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-  <#include "/${parameters.templateDir}/jquery/topics.ftl" />
-  <#include "/${parameters.templateDir}/jquery/action.ftl" />
-  <#include "/${parameters.templateDir}/jquery/container.ftl" />
+  <#include "/${attributes.templateDir}/jquery/base.ftl" />
+  <#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+  <#include "/${attributes.templateDir}/jquery/topics.ftl" />
+  <#include "/${attributes.templateDir}/jquery/action.ftl" />
+  <#include "/${attributes.templateDir}/jquery/container.ftl" />
 
-  <#include "/${parameters.templateDir}/jquery/jquery-ui-bind.ftl" />
+  <#include "/${attributes.templateDir}/jquery/jquery-ui-bind.ftl" />
  });
 </@s.script>

@@ -18,27 +18,27 @@
  * under the License.
  */
 -->
-<#if parameters.parentTheme == 'xhtml' || parameters.parentTheme == 'css_xhtml' || parameters.parentTheme == 'simple'>
-	<#if parameters.parentTheme == 'xhtml'>
-		<#include "/${parameters.templateDir}/xhtml/controlheader.ftl" />
+<#if attributes.parentTheme == 'xhtml' || attributes.parentTheme == 'css_xhtml' || attributes.parentTheme == 'simple'>
+	<#if attributes.parentTheme == 'xhtml'>
+		<#include "/${attributes.templateDir}/xhtml/controlheader.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'css_xhtml'>
-		<#include "/${parameters.templateDir}/css_xhtml/controlheader.ftl" />
+	<#if attributes.parentTheme == 'css_xhtml'>
+		<#include "/${attributes.templateDir}/css_xhtml/controlheader.ftl" />
 	</#if>
-<div id="${parameters.id}">
-<#include "/${parameters.templateDir}/simple/radiomap.ftl" />
+<div id="${attributes.id}">
+<#include "/${attributes.templateDir}/simple/radiomap.ftl" />
 </div>
-	<#if parameters.parentTheme == 'xhtml'>
-		<#include "/${parameters.templateDir}/xhtml/controlfooter.ftl" />
+	<#if attributes.parentTheme == 'xhtml'>
+		<#include "/${attributes.templateDir}/xhtml/controlfooter.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'css_xhtml'>
-		<#include "/${parameters.templateDir}/css_xhtml/controlfooter.ftl" />
+	<#if attributes.parentTheme == 'css_xhtml'>
+		<#include "/${attributes.templateDir}/css_xhtml/controlfooter.ftl" />
 	</#if>
 <#else>
-<#include "/${parameters.templateDir}/${parameters.parentTheme}/controlheader.ftl" />
-<div id="${parameters.id}">
-<#include "/${parameters.templateDir}/${parameters.parentTheme}/radiomap.ftl" />
+<#include "/${attributes.templateDir}/${attributes.parentTheme}/controlheader.ftl" />
+<div id="${attributes.id}">
+<#include "/${attributes.templateDir}/${attributes.parentTheme}/radiomap.ftl" />
 </div>
-<#include "/${parameters.templateDir}/${parameters.parentTheme}/controlfooter.ftl" />
+<#include "/${attributes.templateDir}/${attributes.parentTheme}/controlfooter.ftl" />
 
 </#if>

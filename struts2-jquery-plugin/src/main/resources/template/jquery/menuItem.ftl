@@ -19,35 +19,35 @@
  */
 -->
 <li
-<#if parameters.id?if_exists != "">
-		id="${parameters.id}"<#rt/>
+<#if attributes.id?if_exists != "">
+		id="${attributes.id}"<#rt/>
 </#if>
-<#if parameters.cssStyle?if_exists != "">
-		style="${parameters.cssStyle}"<#rt/>
+<#if attributes.cssStyle?if_exists != "">
+		style="${attributes.cssStyle}"<#rt/>
 </#if>
-<#if parameters.cssClass?if_exists != "">
-		class="${parameters.cssClass}"<#rt/>
+<#if attributes.cssClass?if_exists != "">
+		class="${attributes.cssClass}"<#rt/>
 </#if>
-<#if parameters.type?if_exists != "">
-		rel="${parameters.type}"<#rt/>
+<#if attributes.type?if_exists != "">
+		rel="${attributes.type}"<#rt/>
 </#if>
-<#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-<#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-<#include "/${parameters.templateDir}/simple/dynamic-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+<#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/dynamic-attributes.ftl" />
 >
 <div>
-<#if !parameters.targets?exists && parameters.href?if_exists != "">
-<a href="${parameters.href?string}">
-<#elseif parameters.targets?exists && parameters.href?if_exists != "">
+<#if !attributes.targets?exists && attributes.href?if_exists != "">
+<a href="${attributes.href?string}">
+<#elseif attributes.targets?exists && attributes.href?if_exists != "">
 <a href="javascript:void(0)" >
 </#if>
-<#if parameters.menuIcon?if_exists != "">
-<span class="ui-icon ${parameters.menuIcon}"></span><#rt/>
+<#if attributes.menuIcon?if_exists != "">
+<span class="ui-icon ${attributes.menuIcon}"></span><#rt/>
 </#if>
-<#if parameters.title?if_exists != "">
-${parameters.title}<#rt/>
+<#if attributes.title?if_exists != "">
+${attributes.title}<#rt/>
 </#if>
-<#if parameters.href?if_exists != "">
+<#if attributes.href?if_exists != "">
 </a><#rt/>
 </#if>
 </div>

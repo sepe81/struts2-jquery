@@ -18,74 +18,74 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
-  <#if parameters.targets! != "">
-	options_${escapedOptionId}.targets = "${parameters.targets}";
+<#assign escapedOptionId="${attributes.escapedId}">
+  <#if attributes.targets! != "">
+	options_${escapedOptionId}.targets = "${attributes.targets}";
   </#if>
-  <#if parameters.hrefUrl! != "">
-	options_${escapedOptionId}.href = "${parameters.hrefUrl}";
+  <#if attributes.hrefUrl! != "">
+	options_${escapedOptionId}.href = "${attributes.hrefUrl}";
   <#else>
 	options_${escapedOptionId}.href = "#";
   </#if>
-  <#if parameters.hrefParameter! != "">
-	options_${escapedOptionId}.hrefparameter = "<#outputformat "JavaScript">${parameters.hrefParameter}</#outputformat>";
+  <#if attributes.hrefParameter! != "">
+	options_${escapedOptionId}.hrefparameter = "<#outputformat "JavaScript">${attributes.hrefParameter}</#outputformat>";
   </#if>
-  <#if parameters.formIds??>
-	options_${escapedOptionId}.formids = "${parameters.formIds}";
+  <#if attributes.formIds??>
+	options_${escapedOptionId}.formids = "${attributes.formIds}";
   </#if>
-  <#if parameters.onClickTopics??>
-	options_${escapedOptionId}.onclick = "${parameters.onClickTopics}";
+  <#if attributes.onClickTopics??>
+	options_${escapedOptionId}.onclick = "${attributes.onClickTopics}";
   </#if>
-  <#if parameters.indicator??>
-	options_${escapedOptionId}.indicatorid = "${parameters.indicator}";
+  <#if attributes.indicator??>
+	options_${escapedOptionId}.indicatorid = "${attributes.indicator}";
   </#if>
-  <#if parameters.loadingText??>
-	options_${escapedOptionId}.loadingtext = "${parameters.loadingText}";
+  <#if attributes.loadingText??>
+	options_${escapedOptionId}.loadingtext = "${attributes.loadingText}";
   </#if>
-  <#if parameters.errorText??>
-	options_${escapedOptionId}.errortext = "${parameters.errorText}";
+  <#if attributes.errorText??>
+	options_${escapedOptionId}.errortext = "${attributes.errorText}";
   </#if>
-  <#if parameters.errorElementId??>
-	options_${escapedOptionId}.errorelementid = "${parameters.errorElementId}";
+  <#if attributes.errorElementId??>
+	options_${escapedOptionId}.errorelementid = "${attributes.errorElementId}";
   </#if>
-  <#if parameters.dataType??>
-	options_${escapedOptionId}.datatype = "${parameters.dataType}";
+  <#if attributes.dataType??>
+	options_${escapedOptionId}.datatype = "${attributes.dataType}";
   </#if>
-  <#if parameters.requestType??>
-	options_${escapedOptionId}.requesttype = "${parameters.requestType}";
+  <#if attributes.requestType??>
+	options_${escapedOptionId}.requesttype = "${attributes.requestType}";
   </#if>
-  <#if parameters.effect??>
-	options_${escapedOptionId}.effect = "${parameters.effect}";
-	<#if parameters.effectDuration??>
-	options_${escapedOptionId}.effectduration = ${parameters.effectDuration};
+  <#if attributes.effect??>
+	options_${escapedOptionId}.effect = "${attributes.effect}";
+	<#if attributes.effectDuration??>
+	options_${escapedOptionId}.effectduration = ${attributes.effectDuration};
 	</#if>
-	<#if parameters.effectMode??>
-	options_${escapedOptionId}.effectmode = "${parameters.effectMode}";
+	<#if attributes.effectMode??>
+	options_${escapedOptionId}.effectmode = "${attributes.effectMode}";
 	</#if>
-	<#if parameters.effectOptions??>
-	options_${escapedOptionId}.effectoptions = <#outputformat "JavaScript">${parameters.effectOptions}</#outputformat>;
+	<#if attributes.effectOptions??>
+	options_${escapedOptionId}.effectoptions = <#outputformat "JavaScript">${attributes.effectOptions}</#outputformat>;
 	<#else>
 	options_${escapedOptionId}.effectoptions = {};
 	</#if>
   </#if>
-  <#if parameters.timeout??>
-	options_${escapedOptionId}.timeout = ${parameters.timeout};
+  <#if attributes.timeout??>
+	options_${escapedOptionId}.timeout = ${attributes.timeout};
   </#if>
-  <#if parameters.listenTopics??>
-	options_${escapedOptionId}.listentopics = "${parameters.listenTopics}";
+  <#if attributes.listenTopics??>
+	options_${escapedOptionId}.listentopics = "${attributes.listenTopics}";
   </#if>
-  <#if parameters.onEffectCompleteTopics??>
-	options_${escapedOptionId}.oneffect = "${parameters.onEffectCompleteTopics}";
+  <#if attributes.onEffectCompleteTopics??>
+	options_${escapedOptionId}.oneffect = "${attributes.onEffectCompleteTopics}";
   </#if>
-   <#if parameters.clearForm!false>
+   <#if attributes.clearForm!false>
 	options_${escapedOptionId}.clearform = true;
     </#if>
-   <#if parameters.resetForm!false>
+   <#if attributes.resetForm!false>
 	options_${escapedOptionId}.resetform = true;
     </#if>
-   <#if parameters.iframe!false>
+   <#if attributes.iframe!false>
 	options_${escapedOptionId}.iframe = true;
     </#if>
-   <#if parameters.replaceTarget!false>
+   <#if attributes.replaceTarget!false>
 	options_${escapedOptionId}.replaceTarget = true;
     </#if>

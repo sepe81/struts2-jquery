@@ -18,54 +18,54 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 </div>
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_${escapedOptionId} = {};
-  <#if parameters.selectedTab??>
-	options_${escapedOptionId}.selectedtab = ${parameters.selectedTab?c};
+  <#if attributes.selectedTab??>
+	options_${escapedOptionId}.selectedtab = ${attributes.selectedTab?c};
   </#if>
-  <#if parameters.openOnMouseover!false>
+  <#if attributes.openOnMouseover!false>
 	options_${escapedOptionId}.event = "mouseover";
   </#if>
-  <#if parameters.collapsible!false>
+  <#if attributes.collapsible!false>
 	options_${escapedOptionId}.collapsible = true;
   </#if>
-  <#if parameters.useSelectedTabCookie!false>
+  <#if attributes.useSelectedTabCookie!false>
 	options_${escapedOptionId}.cookie = true;
   </#if>
-  <#if parameters.show! != "">
-	options_${escapedOptionId}.show = <#outputformat "JavaScript">${parameters.show}</#outputformat>;
+  <#if attributes.show! != "">
+	options_${escapedOptionId}.show = <#outputformat "JavaScript">${attributes.show}</#outputformat>;
   </#if>
-  <#if parameters.hide! != "">
-	options_${escapedOptionId}.hide = <#outputformat "JavaScript">${parameters.hide}</#outputformat>;
+  <#if attributes.hide! != "">
+	options_${escapedOptionId}.hide = <#outputformat "JavaScript">${attributes.hide}</#outputformat>;
   </#if>
-  <#if parameters.cache!false>
+  <#if attributes.cache!false>
 	options_${escapedOptionId}.cache = true;
   </#if>
-  <#if parameters.disabledTabs! != "">
-	options_${escapedOptionId}.disabledtabs = "${parameters.disabledTabs}";
+  <#if attributes.disabledTabs! != "">
+	options_${escapedOptionId}.disabledtabs = "${attributes.disabledTabs}";
   </#if>
-  <#if parameters.sortable!false>
+  <#if attributes.sortable!false>
 	options_${escapedOptionId}.sortable = true;
   </#if>
-  <#if parameters.heightStyle! != "">
-	options_${escapedOptionId}.heightStyle = "${parameters.heightStyle}";
+  <#if attributes.heightStyle! != "">
+	options_${escapedOptionId}.heightStyle = "${attributes.heightStyle}";
   </#if>
-  <#if parameters.onLoadTopics! != "">
-	options_${escapedOptionId}.onloadtopics = "${parameters.onLoadTopics}";
+  <#if attributes.onLoadTopics! != "">
+	options_${escapedOptionId}.onloadtopics = "${attributes.onLoadTopics}";
   </#if>
-  <#if parameters.onActivateTopics! != "">
-	options_${escapedOptionId}.onactivatetopics = "${parameters.onActivateTopics}";
+  <#if attributes.onActivateTopics! != "">
+	options_${escapedOptionId}.onactivatetopics = "${attributes.onActivateTopics}";
   </#if>
-<#if parameters.onBeforeActivateTopics! != "">
-	options_${escapedOptionId}.onbefacttopics = "${parameters.onBeforeActivateTopics}";
+<#if attributes.onBeforeActivateTopics! != "">
+	options_${escapedOptionId}.onbefacttopics = "${attributes.onBeforeActivateTopics}";
 </#if>
-<#include "/${parameters.templateDir}/jquery/base.ftl" />
-<#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-<#include "/${parameters.templateDir}/jquery/topics.ftl" />
+<#include "/${attributes.templateDir}/jquery/base.ftl" />
+<#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+<#include "/${attributes.templateDir}/jquery/topics.ftl" />
 
-<#include "/${parameters.templateDir}/jquery/jquery-ui-bind.ftl" />
+<#include "/${attributes.templateDir}/jquery/jquery-ui-bind.ftl" />
  });
 </@s.script>

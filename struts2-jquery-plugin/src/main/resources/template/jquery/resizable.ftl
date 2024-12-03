@@ -18,19 +18,19 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
-  <#if parameters.resizable!false>
+<#assign escapedOptionId="${attributes.escapedId}">
+  <#if attributes.resizable!false>
 	options_${escapedOptionId}.resizable = true;<#rt/>
    </#if>
-  <#if parameters.resizableOptions! != "">
- 	options_${escapedOptionId}.resizableoptions = "<#outputformat "JavaScript">${parameters.resizableOptions}</#outputformat>";<#rt/>
+  <#if attributes.resizableOptions! != "">
+ 	options_${escapedOptionId}.resizableoptions = "<#outputformat "JavaScript">${attributes.resizableOptions}</#outputformat>";<#rt/>
    </#if>
-  <#if parameters.resizableOnResizeTopics! != "">
-	options_${escapedOptionId}.resizableonresizetopics = "${parameters.resizableOnResizeTopics}";<#rt/>
+  <#if attributes.resizableOnResizeTopics! != "">
+	options_${escapedOptionId}.resizableonresizetopics = "${attributes.resizableOnResizeTopics}";<#rt/>
    </#if>
-  <#if parameters.resizableOnStartTopics! != "">
-	options_${escapedOptionId}.resizableonstarttopics = "${parameters.resizableOnStartTopics}";<#rt/>
+  <#if attributes.resizableOnStartTopics! != "">
+	options_${escapedOptionId}.resizableonstarttopics = "${attributes.resizableOnStartTopics}";<#rt/>
    </#if>
-  <#if parameters.resizableOnStopTopics! != "">
-	options_${escapedOptionId}.resizableonstoptopics = "${parameters.resizableOnStopTopics}";<#rt/>
+  <#if attributes.resizableOnStopTopics! != "">
+	options_${escapedOptionId}.resizableonstoptopics = "${attributes.resizableOnStopTopics}";<#rt/>
    </#if>

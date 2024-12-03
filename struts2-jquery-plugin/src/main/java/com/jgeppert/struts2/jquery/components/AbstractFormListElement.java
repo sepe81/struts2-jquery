@@ -69,7 +69,7 @@ public abstract class AbstractFormListElement extends AbstractFormElement {
             Object value = null;
 
             if (list == null) {
-                list = parameters.get(PARAM_LIST);
+                list = attributes.get(PARAM_LIST);
             }
 
             if (list instanceof String) {

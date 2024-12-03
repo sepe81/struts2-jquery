@@ -18,4 +18,4 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/${parameters.parentTheme}/submit.ftl" />
+<#include "/${attributes.templateDir}/${attributes.parentTheme}/submit.ftl" />

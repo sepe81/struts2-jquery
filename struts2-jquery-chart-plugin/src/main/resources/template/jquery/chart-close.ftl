@@ -18,160 +18,160 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 
-  <#include "/${parameters.templateDir}/jquery/base.ftl" />
-  <#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-  <#include "/${parameters.templateDir}/jquery/topics.ftl" />
-  <#include "/${parameters.templateDir}/jquery/action.ftl" />
-  <#include "/${parameters.templateDir}/jquery/container.ftl" />
+  <#include "/${attributes.templateDir}/jquery/base.ftl" />
+  <#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+  <#include "/${attributes.templateDir}/jquery/topics.ftl" />
+  <#include "/${attributes.templateDir}/jquery/action.ftl" />
+  <#include "/${attributes.templateDir}/jquery/container.ftl" />
 
 options_${escapedOptionId}.xaxis = {};
-<#if parameters.xaxisPosition! != "">
-options_${escapedOptionId}.xaxis.position = "${parameters.xaxisPosition}";
+<#if attributes.xaxisPosition! != "">
+options_${escapedOptionId}.xaxis.position = "${attributes.xaxisPosition}";
 </#if>
-<#if parameters.xaxisMode! == "time">
+<#if attributes.xaxisMode! == "time">
 options_${escapedOptionId}.xaxis.mode = "time";
 options_${escapedOptionId}.xaxis.timeBase = "milliseconds";
-	<#if parameters.xaxisTimeformat! != "">
-options_${escapedOptionId}.xaxis.timeformat = "${parameters.xaxisTimeformat}";
+	<#if attributes.xaxisTimeformat! != "">
+options_${escapedOptionId}.xaxis.timeformat = "${attributes.xaxisTimeformat}";
 	</#if>
 </#if>
-<#if parameters.xaxisColor! != "">
-options_${escapedOptionId}.xaxis.color = "${parameters.xaxisColor}";
+<#if attributes.xaxisColor! != "">
+options_${escapedOptionId}.xaxis.color = "${attributes.xaxisColor}";
 </#if>
-<#if parameters.xaxisTick! != "">
-options_${escapedOptionId}.xaxis.ticks = ${parameters.xaxisTick};
+<#if attributes.xaxisTick! != "">
+options_${escapedOptionId}.xaxis.ticks = ${attributes.xaxisTick};
 </#if>
-<#if parameters.xaxisTickSize! != "">
-options_${escapedOptionId}.xaxis.tickSize = <#outputformat "JavaScript">${parameters.xaxisTickSize}</#outputformat>;
+<#if attributes.xaxisTickSize! != "">
+options_${escapedOptionId}.xaxis.tickSize = <#outputformat "JavaScript">${attributes.xaxisTickSize}</#outputformat>;
 </#if>
-<#if parameters.xaxisTickDecimals! != "">
-options_${escapedOptionId}.xaxis.tickDecimals = ${parameters.xaxisTickDecimals};
+<#if attributes.xaxisTickDecimals! != "">
+options_${escapedOptionId}.xaxis.tickDecimals = ${attributes.xaxisTickDecimals};
 </#if>
-<#if parameters.xaxisTickColor! != "">
-options_${escapedOptionId}.xaxis.tickColor = "${parameters.xaxisTickColor}";
+<#if attributes.xaxisTickColor! != "">
+options_${escapedOptionId}.xaxis.tickColor = "${attributes.xaxisTickColor}";
 </#if>
-<#if parameters.xaxisMin! != "">
-options_${escapedOptionId}.xaxis.min = ${parameters.xaxisMin};
+<#if attributes.xaxisMin! != "">
+options_${escapedOptionId}.xaxis.min = ${attributes.xaxisMin};
 </#if>
-<#if parameters.xaxisMax! != "">
-options_${escapedOptionId}.xaxis.max = ${parameters.xaxisMax};
+<#if attributes.xaxisMax! != "">
+options_${escapedOptionId}.xaxis.max = ${attributes.xaxisMax};
 </#if>
-<#if parameters.xaxisLabel! != "">
-options_${escapedOptionId}.xaxis.axisLabel = "${parameters.xaxisLabel}";
+<#if attributes.xaxisLabel! != "">
+options_${escapedOptionId}.xaxis.axisLabel = "${attributes.xaxisLabel}";
 options_${escapedOptionId}.xaxis.axisLabelUseCanvas = true;
-	<#if parameters.xaxisLabelFontSizePixels??>
-options_${escapedOptionId}.xaxis.axisLabelFontSizePixels = ${parameters.xaxisLabelFontSizePixels?c};
+	<#if attributes.xaxisLabelFontSizePixels??>
+options_${escapedOptionId}.xaxis.axisLabelFontSizePixels = ${attributes.xaxisLabelFontSizePixels?c};
 	</#if>
-	<#if parameters.xaxisLabelFontFamily! != "">
-options_${escapedOptionId}.xaxis.axisLabelFontFamily = "${parameters.xaxisLabelFontFamily}";
+	<#if attributes.xaxisLabelFontFamily! != "">
+options_${escapedOptionId}.xaxis.axisLabelFontFamily = "${attributes.xaxisLabelFontFamily}";
 	</#if>
 </#if>
 options_${escapedOptionId}.yaxis = {};
-<#if parameters.yaxisPosition! != "">
-options_${escapedOptionId}.yaxis.position = "${parameters.yaxisPosition}";
+<#if attributes.yaxisPosition! != "">
+options_${escapedOptionId}.yaxis.position = "${attributes.yaxisPosition}";
 </#if>
-<#if parameters.yaxisMode! == "time">
+<#if attributes.yaxisMode! == "time">
 options_${escapedOptionId}.yaxis.mode = "time";
-	<#if parameters.yaxisTimeformat! != "">
-options_${escapedOptionId}.yaxis.timeformat = "${parameters.yaxisTimeformat}";
+	<#if attributes.yaxisTimeformat! != "">
+options_${escapedOptionId}.yaxis.timeformat = "${attributes.yaxisTimeformat}";
 	</#if>
 </#if>
-<#if parameters.yaxisColor! != "">
-options_${escapedOptionId}.yaxis.color = "${parameters.yaxisColor}";
+<#if attributes.yaxisColor! != "">
+options_${escapedOptionId}.yaxis.color = "${attributes.yaxisColor}";
 </#if>
-<#if parameters.yaxisTick??>
-options_${escapedOptionId}.yaxis.ticks = ${parameters.yaxisTick?string};
+<#if attributes.yaxisTick??>
+options_${escapedOptionId}.yaxis.ticks = ${attributes.yaxisTick?string};
 </#if>
-<#if parameters.yaxisTickSize??>
-options_${escapedOptionId}.yaxis.tickSize = <#outputformat "JavaScript">${parameters.yaxisTickSize?string}</#outputformat>;
+<#if attributes.yaxisTickSize??>
+options_${escapedOptionId}.yaxis.tickSize = <#outputformat "JavaScript">${attributes.yaxisTickSize?string}</#outputformat>;
 </#if>
-<#if parameters.yaxisTickDecimals??>
-options_${escapedOptionId}.yaxis.tickDecimals = ${parameters.yaxisTickDecimals?string};
+<#if attributes.yaxisTickDecimals??>
+options_${escapedOptionId}.yaxis.tickDecimals = ${attributes.yaxisTickDecimals?string};
 </#if>
-<#if parameters.yaxisTickColor! != "">
-options_${escapedOptionId}.yaxis.tickColor = "${parameters.yaxisTickColor}";
+<#if attributes.yaxisTickColor! != "">
+options_${escapedOptionId}.yaxis.tickColor = "${attributes.yaxisTickColor}";
 </#if>
-<#if parameters.yaxisMin??>
-options_${escapedOptionId}.yaxis.min = ${parameters.yaxisMin?string};
+<#if attributes.yaxisMin??>
+options_${escapedOptionId}.yaxis.min = ${attributes.yaxisMin?string};
 </#if>
-<#if parameters.yaxisMax??>
-options_${escapedOptionId}.yaxis.max = ${parameters.yaxisMax?string};
+<#if attributes.yaxisMax??>
+options_${escapedOptionId}.yaxis.max = ${attributes.yaxisMax?string};
 </#if>
-<#if parameters.yaxisLabel! != "">
-options_${escapedOptionId}.yaxis.axisLabel = "${parameters.yaxisLabel}";
+<#if attributes.yaxisLabel! != "">
+options_${escapedOptionId}.yaxis.axisLabel = "${attributes.yaxisLabel}";
 options_${escapedOptionId}.yaxis.axisLabelUseCanvas = true;
-	<#if parameters.yaxisLabelFontSizePixels??>
-options_${escapedOptionId}.yaxis.axisLabelFontSizePixels = ${parameters.yaxisLabelFontSizePixels?c};
+	<#if attributes.yaxisLabelFontSizePixels??>
+options_${escapedOptionId}.yaxis.axisLabelFontSizePixels = ${attributes.yaxisLabelFontSizePixels?c};
 	</#if>
-	<#if parameters.yaxisLabelFontFamily! != "">
-options_${escapedOptionId}.yaxis.axisLabelFontFamily = "${parameters.yaxisLabelFontFamily}";
+	<#if attributes.yaxisLabelFontFamily! != "">
+options_${escapedOptionId}.yaxis.axisLabelFontFamily = "${attributes.yaxisLabelFontFamily}";
 	</#if>
 </#if>
 options_${escapedOptionId}.legend = {};
-<#if parameters.legendShow??>
-options_${escapedOptionId}.legend.show = ${parameters.legendShow?string};
+<#if attributes.legendShow??>
+options_${escapedOptionId}.legend.show = ${attributes.legendShow?string};
 </#if>
-<#if parameters.legendPosition! != "">
-options_${escapedOptionId}.legend.position = "${parameters.legendPosition}";
+<#if attributes.legendPosition! != "">
+options_${escapedOptionId}.legend.position = "${attributes.legendPosition}";
 </#if>
-<#if parameters.legendLabelBoxBorderColor! != "">
-options_${escapedOptionId}.legend.labelBoxBorderColor = "${parameters.legendLabelBoxBorderColor}";
+<#if attributes.legendLabelBoxBorderColor! != "">
+options_${escapedOptionId}.legend.labelBoxBorderColor = "${attributes.legendLabelBoxBorderColor}";
 </#if>
-<#if parameters.legendBackgroundColor! != "">
-options_${escapedOptionId}.legend.backgroundColor = "${parameters.legendBackgroundColor}";
+<#if attributes.legendBackgroundColor! != "">
+options_${escapedOptionId}.legend.backgroundColor = "${attributes.legendBackgroundColor}";
 </#if>
-<#if parameters.onHoverTopics! != "">
-options_${escapedOptionId}.onhover = "${parameters.onHoverTopics}";
+<#if attributes.onHoverTopics! != "">
+options_${escapedOptionId}.onhover = "${attributes.onHoverTopics}";
 </#if>
-<#if parameters.crosshair!false>
+<#if attributes.crosshair!false>
 	options_${escapedOptionId}.crosshair = {};
-	<#if parameters.crosshairMode! != "">
-	options_${escapedOptionId}.crosshair.mode = "${parameters.crosshairMode}";
+	<#if attributes.crosshairMode! != "">
+	options_${escapedOptionId}.crosshair.mode = "${attributes.crosshairMode}";
 	</#if>
-	<#if parameters.crosshairColor! != "">
-	options_${escapedOptionId}.crosshair.color = "${parameters.crosshairColor}";
+	<#if attributes.crosshairColor! != "">
+	options_${escapedOptionId}.crosshair.color = "${attributes.crosshairColor}";
 	</#if>
-  	<#if parameters.crosshairLineWidth??>
-	options_${escapedOptionId}.crosshair.lineWidth = ${parameters.crosshairLineWidth?string};
+  	<#if attributes.crosshairLineWidth??>
+	options_${escapedOptionId}.crosshair.lineWidth = ${attributes.crosshairLineWidth?string};
   	</#if>
 </#if>
-<#if parameters.pie!false>
+<#if attributes.pie!false>
 	if(options_${escapedOptionId}.series){
 	options_${escapedOptionId}.series = $.extend(options_${escapedOptionId}.series , { pie: { show: true }});
 	} else {
 	options_${escapedOptionId}.series = { pie: { show: true }};
 	}
-	<#if parameters.pieRadius??>
-		options_${escapedOptionId}.series.pie.radius = ${parameters.pieRadius?string};
+	<#if attributes.pieRadius??>
+		options_${escapedOptionId}.series.pie.radius = ${attributes.pieRadius?string};
 	</#if>
-	<#if parameters.pieInnerRadius??>
-		options_${escapedOptionId}.series.pie.innerRadius = ${parameters.pieInnerRadius?string};
+	<#if attributes.pieInnerRadius??>
+		options_${escapedOptionId}.series.pie.innerRadius = ${attributes.pieInnerRadius?string};
 	</#if>
-	<#if parameters.pieLabel!false>
+	<#if attributes.pieLabel!false>
 		options_${escapedOptionId}.series.pie.label = { show: true };
-		<#if parameters.pieLabelRadius??>
-			options_${escapedOptionId}.series.pie.label.radius = ${parameters.pieLabelRadius?string};
+		<#if attributes.pieLabelRadius??>
+			options_${escapedOptionId}.series.pie.label.radius = ${attributes.pieLabelRadius?string};
 		</#if>
-		<#if parameters.pieLabelFormatter! != "">
-			options_${escapedOptionId}.series.pie.label.formatter = ${parameters.pieLabelFormatter};
+		<#if attributes.pieLabelFormatter! != "">
+			options_${escapedOptionId}.series.pie.label.formatter = ${attributes.pieLabelFormatter};
 		</#if>
-	  	<#if parameters.pieLabelBackgroundColor?? || parameters.pieLabelBackgroundOpacity??>
+	  	<#if attributes.pieLabelBackgroundColor?? || attributes.pieLabelBackgroundOpacity??>
 			options_${escapedOptionId}.series.pie.label.background = {};
-		<#if parameters.pieLabelBackgroundColor! != "">
-			options_${escapedOptionId}.series.pie.label.background.color = "${parameters.pieLabelBackgroundColor}";
+		<#if attributes.pieLabelBackgroundColor! != "">
+			options_${escapedOptionId}.series.pie.label.background.color = "${attributes.pieLabelBackgroundColor}";
 		</#if>
-		<#if parameters.pieLabelBackgroundOpacity??>
-			options_${escapedOptionId}.series.pie.label.background.opacity = ${parameters.pieLabelBackgroundOpacity?string};
+		<#if attributes.pieLabelBackgroundOpacity??>
+			options_${escapedOptionId}.series.pie.label.background.opacity = ${attributes.pieLabelBackgroundOpacity?string};
 		</#if>
 	  	</#if>
 	</#if>
 </#if>
-<#if parameters.autoResize!false>
+<#if attributes.autoResize!false>
 	options_${escapedOptionId}.autoresize = true;
 </#if>
-	<#assign escapedId="${parameters.id?string?replace('.', '\\\\\\\\.')}">
+	<#assign escapedId="${attributes.id?string?replace('.', '\\\\\\\\.')}">
 	jQuery.struts2_jquery_chart.bind(jQuery('#${escapedId}'),options_${escapedOptionId});
  });
 </script>

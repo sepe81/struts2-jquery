@@ -18,23 +18,23 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
     jQuery.struts2_jquery.require(["js/struts2/jquery.datatables.struts2"+jQuery.struts2_jquery.minSuffix+".js","js/plugins/jquery.dataTables"+jQuery.struts2_jquery.minSuffix+".js"]);
  });
 </@s.script>
-<table id="${parameters.id}"
-<#if parameters.cssClass??>
- class="${parameters.cssClass}"<#rt/>
+<table id="${attributes.id}"
+<#if attributes.cssClass??>
+ class="${attributes.cssClass}"<#rt/>
 </#if>
-<#if parameters.cssStyle??>
- style="${parameters.cssStyle}"<#rt/>
+<#if attributes.cssStyle??>
+ style="${attributes.cssStyle}"<#rt/>
 </#if>
-<#if parameters.title??>
- title="${parameters.title}"<#rt/>
+<#if attributes.title??>
+ title="${attributes.title}"<#rt/>
 </#if>
-<#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-<#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-<#include "/${parameters.templateDir}/simple/dynamic-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+<#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/dynamic-attributes.ftl" />
 >

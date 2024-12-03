@@ -20,30 +20,30 @@
 -->
 			</ul>
 		</li>
-<#if parameters.targets! != "">
-  <#assign escapedOptionId="${parameters.escapedId}">
+<#if attributes.targets! != "">
+  <#assign escapedOptionId="${attributes.escapedId}">
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_${escapedOptionId} = {};
-	<#if parameters.openDialog! != "">
-	options_${escapedOptionId}.opendialog = "${parameters.openDialog}";
+	<#if attributes.openDialog! != "">
+	options_${escapedOptionId}.opendialog = "${attributes.openDialog}";
 	</#if>
-    <#if parameters.jqueryaction??>
+    <#if attributes.jqueryaction??>
         options_${escapedOptionId}.jqueryaction = "anchor";
     </#if>
-    <#if parameters.id??>
-        options_${escapedOptionId}.id = "${parameters.id}_link";
+    <#if attributes.id??>
+        options_${escapedOptionId}.id = "${attributes.id}_link";
     </#if>
-    <#if parameters.name??>
-        options_${escapedOptionId}.name = "${parameters.name}";
+    <#if attributes.name??>
+        options_${escapedOptionId}.name = "${attributes.name}";
     </#if>
-  <#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-  <#include "/${parameters.templateDir}/jquery/topics.ftl" />
-  <#include "/${parameters.templateDir}/jquery/action.ftl" />
-  <#include "/${parameters.templateDir}/jquery/validation.ftl" />
+  <#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+  <#include "/${attributes.templateDir}/jquery/topics.ftl" />
+  <#include "/${attributes.templateDir}/jquery/action.ftl" />
+  <#include "/${attributes.templateDir}/jquery/validation.ftl" />
 
-<#assign escapedId="${parameters.id?string?replace('.', '\\\\\\\\.')}">
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedId="${attributes.id?string?replace('.', '\\\\\\\\.')}">
+<#assign escapedOptionId="${attributes.escapedId}">
 	jQuery.struts2_jquery_tree.bind(jQuery('#${escapedId}_link'),options_${escapedOptionId});
  });
 </@s.script>

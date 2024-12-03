@@ -18,40 +18,40 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
-  <#if parameters.onCompleteTopics??>
-	options_${escapedOptionId}.oncom = "${parameters.onCompleteTopics}";
+<#assign escapedOptionId="${attributes.escapedId}">
+  <#if attributes.onCompleteTopics??>
+	options_${escapedOptionId}.oncom = "${attributes.onCompleteTopics}";
   </#if>
-  <#if parameters.onSuccessTopics??>
-	options_${escapedOptionId}.onsuc = "${parameters.onSuccessTopics}";
+  <#if attributes.onSuccessTopics??>
+	options_${escapedOptionId}.onsuc = "${attributes.onSuccessTopics}";
   </#if>
-  <#if parameters.onErrorTopics??>
-	options_${escapedOptionId}.onerr = "${parameters.onErrorTopics}";
+  <#if attributes.onErrorTopics??>
+	options_${escapedOptionId}.onerr = "${attributes.onErrorTopics}";
   </#if>
-  <#if parameters.onBeforeTopics??>
-	options_${escapedOptionId}.onbef = "${parameters.onBeforeTopics}";
+  <#if attributes.onBeforeTopics??>
+	options_${escapedOptionId}.onbef = "${attributes.onBeforeTopics}";
   </#if>
-  <#if parameters.onAfterValidationTopics??>
-    options_${escapedOptionId}.onaftervalidation = "${parameters.onAfterValidationTopics}";
+  <#if attributes.onAfterValidationTopics??>
+    options_${escapedOptionId}.onaftervalidation = "${attributes.onAfterValidationTopics}";
   </#if>
-  <#if parameters.onAlwaysTopics??>
-	options_${escapedOptionId}.onalw = "${parameters.onAlwaysTopics}";
+  <#if attributes.onAlwaysTopics??>
+	options_${escapedOptionId}.onalw = "${attributes.onAlwaysTopics}";
   </#if>
-  <#if parameters.onChangeTopics??>
-	options_${escapedOptionId}.oncha = "${parameters.onChangeTopics}";
+  <#if attributes.onChangeTopics??>
+	options_${escapedOptionId}.oncha = "${attributes.onChangeTopics}";
   </#if>
-  <#if parameters.onHideTopics??>
-	options_${escapedOptionId}.onhidetopics = "${parameters.onHideTopics?string}";
+  <#if attributes.onHideTopics??>
+	options_${escapedOptionId}.onhidetopics = "${attributes.onHideTopics?string}";
   </#if>
-  <#if parameters.onShowTopics??>
-	options_${escapedOptionId}.onshowtopics = "${parameters.onShowTopics?string}";
+  <#if attributes.onShowTopics??>
+	options_${escapedOptionId}.onshowtopics = "${attributes.onShowTopics?string}";
   </#if>
-  <#if parameters.onRemoveTopics??>
-	options_${escapedOptionId}.onremovetopics = "${parameters.onRemoveTopics?string}";
+  <#if attributes.onRemoveTopics??>
+	options_${escapedOptionId}.onremovetopics = "${attributes.onRemoveTopics?string}";
   </#if>
-  <#if parameters.onFocusTopics??>
-	options_${escapedOptionId}.onfocustopics = "${parameters.onFocusTopics?string}";
+  <#if attributes.onFocusTopics??>
+	options_${escapedOptionId}.onfocustopics = "${attributes.onFocusTopics?string}";
   </#if>
-  <#if parameters.onBlurTopics??>
-	options_${escapedOptionId}.onblurtopics = "${parameters.onBlurTopics?string}";
+  <#if attributes.onBlurTopics??>
+	options_${escapedOptionId}.onblurtopics = "${attributes.onBlurTopics?string}";
   </#if>

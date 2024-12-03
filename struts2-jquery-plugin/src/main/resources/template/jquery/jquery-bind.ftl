@@ -18,6 +18,6 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 jQuery.struts2_jquery.bind(jQuery('#${escapedOptionId}'),options_${escapedOptionId});
 
