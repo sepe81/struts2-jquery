@@ -23,13 +23,13 @@ jQuery(document).ready(function () {
 	jQuery.struts2_jquery.require("js/struts2/jquery.tree.struts2"+jQuery.struts2_jquery.minSuffix+".js");
  });
 </@s.script>
-<#if parameters.checkbox?default(false)>
-    <input type="hidden" id="${parameters.id}_hidden" name="${parameters.name}" value=""></input>
+<#if attributes.checkbox?default(false)>
+    <input type="hidden" id="${attributes.id}_hidden" name="${attributes.name}" value=""></input>
 </#if>
-<div id="${parameters.id}">
+<div id="${attributes.id}">
 	<ul>
-    <#if parameters.rootNode?exists>
-    ${stack.push(parameters.rootNode)}
-    <#include "/${parameters.templateDir}/jquery/treenode-include.ftl" />
+    <#if attributes.rootNode?exists>
+    ${stack.push(attributes.rootNode)}
+    <#include "/${attributes.templateDir}/jquery/treenode-include.ftl" />
     <#assign oldNode = stack.pop()/> <#-- pop the node off of the stack, but don't show it -->
     </#if>

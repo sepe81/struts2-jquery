@@ -18,114 +18,114 @@
  * under the License.
  */
 -->
-<#assign colName="${parameters.name?string?replace('.', '_')}">
-<#assign escapedOptionId="${parameters.grid?string?replace('.', '_')}">
+<#assign colName="${attributes.name?string?replace('.', '_')}">
+<#assign escapedOptionId="${attributes.grid?string?replace('.', '_')}">
 
 options_${escapedOptionId}_colmodels_${colName} = {};
-options_${escapedOptionId}_colmodels_${colName}.name = "${parameters.name?string}";
-<#if parameters.jsonmap?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.jsonmap = "${parameters.jsonmap}";
+options_${escapedOptionId}_colmodels_${colName}.name = "${attributes.name?string}";
+<#if attributes.jsonmap?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.jsonmap = "${attributes.jsonmap}";
 <#else>
-options_${escapedOptionId}_colmodels_${colName}.jsonmap = "${parameters.name}";
+options_${escapedOptionId}_colmodels_${colName}.jsonmap = "${attributes.name}";
 </#if>
-<#if parameters.index?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.index = "${parameters.index}";
+<#if attributes.index?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.index = "${attributes.index}";
 </#if>
-<#if parameters.width?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.width = <#outputformat "JavaScript">${parameters.width}</#outputformat>;
+<#if attributes.width?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.width = <#outputformat "JavaScript">${attributes.width}</#outputformat>;
 </#if>
-<#if parameters.editoptions?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.editoptions = <#outputformat "JavaScript">${parameters.editoptions}</#outputformat>;
+<#if attributes.editoptions?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.editoptions = <#outputformat "JavaScript">${attributes.editoptions}</#outputformat>;
 </#if>
-<#if parameters.edittype?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.edittype = "${parameters.edittype}";
+<#if attributes.edittype?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.edittype = "${attributes.edittype}";
 </#if>
-<#if parameters.editrules?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.editrules = <#outputformat "JavaScript">${parameters.editrules}</#outputformat>;
+<#if attributes.editrules?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.editrules = <#outputformat "JavaScript">${attributes.editrules}</#outputformat>;
 </#if>
-<#if parameters.formoptions?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.formoptions = <#outputformat "JavaScript">${parameters.formoptions}</#outputformat>;
+<#if attributes.formoptions?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.formoptions = <#outputformat "JavaScript">${attributes.formoptions}</#outputformat>;
 </#if>
-<#if parameters.formatter?if_exists != "">
-	<#if parameters.formatter == "integer" 
-		|| parameters.formatter == "number" 
-		|| parameters.formatter == "currency" 
-		|| parameters.formatter == "date" 
-		|| parameters.formatter == "email" 
-		|| parameters.formatter == "link" 
-		|| parameters.formatter == "showlink" 
-		|| parameters.formatter == "checkbox" 
-		|| parameters.formatter == "select" 
+<#if attributes.formatter?if_exists != "">
+	<#if attributes.formatter == "integer"
+		|| attributes.formatter == "number"
+		|| attributes.formatter == "currency"
+		|| attributes.formatter == "date"
+		|| attributes.formatter == "email"
+		|| attributes.formatter == "link"
+		|| attributes.formatter == "showlink"
+		|| attributes.formatter == "checkbox"
+		|| attributes.formatter == "select"
 		>
-		options_${escapedOptionId}_colmodels_${colName}.formatter = "${parameters.formatter}";
+		options_${escapedOptionId}_colmodels_${colName}.formatter = "${attributes.formatter}";
 	<#else>
-		options_${escapedOptionId}_colmodels_${colName}.formatter = <#outputformat "JavaScript">${parameters.formatter}</#outputformat>;
+		options_${escapedOptionId}_colmodels_${colName}.formatter = <#outputformat "JavaScript">${attributes.formatter}</#outputformat>;
 	</#if>
 </#if>
-<#if parameters.formatoptions?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.formatoptions = <#outputformat "JavaScript">${parameters.formatoptions}</#outputformat>;
+<#if attributes.formatoptions?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.formatoptions = <#outputformat "JavaScript">${attributes.formatoptions}</#outputformat>;
 </#if>
-<#if parameters.align?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.align = "${parameters.align}";
+<#if attributes.align?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.align = "${attributes.align}";
 </#if>
-<#if parameters.cssClass?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.classes = "${parameters.cssClass}";
+<#if attributes.cssClass?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.classes = "${attributes.cssClass}";
 </#if>
-<#if parameters.fixed?default(false)>
+<#if attributes.fixed?default(false)>
 options_${escapedOptionId}_colmodels_${colName}.fixed = true;
 options_${escapedOptionId}.true = false;
 </#if>
-<#if parameters.frozen?default(false)>
+<#if attributes.frozen?default(false)>
 options_${escapedOptionId}_colmodels_${colName}.frozen = true;
 options_${escapedOptionId}.frozen = true;
 </#if>
-<#if parameters.editable?default(false)>
+<#if attributes.editable?default(false)>
 options_${escapedOptionId}_colmodels_${colName}.editable = true;
 <#else>
 options_${escapedOptionId}_colmodels_${colName}.editable = false;
 </#if>
-<#if parameters.sortable?default(true)>
+<#if attributes.sortable?default(true)>
 options_${escapedOptionId}_colmodels_${colName}.sortable = true;
 <#else>
 options_${escapedOptionId}_colmodels_${colName}.sortable = false;
 </#if>
-<#if parameters.sorttype?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.sorttype = "${parameters.sorttype}";
+<#if attributes.sorttype?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.sorttype = "${attributes.sorttype}";
 </#if>
-<#if parameters.resizable?default(true)>
+<#if attributes.resizable?default(true)>
 options_${escapedOptionId}_colmodels_${colName}.resizable = true;
 <#else>
 options_${escapedOptionId}_colmodels_${colName}.resizable = false;
 </#if>
-<#if parameters.search?default(true)>
+<#if attributes.search?default(true)>
 options_${escapedOptionId}_colmodels_${colName}.search = true;
-	<#if parameters.searchtype?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.stype = "${parameters.searchtype}";
+	<#if attributes.searchtype?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.stype = "${attributes.searchtype}";
 	</#if>
 <#else>
 options_${escapedOptionId}_colmodels_${colName}.search = false;
 </#if>
-<#if parameters.key?default(false)>
+<#if attributes.key?default(false)>
 options_${escapedOptionId}_colmodels_${colName}.key = true;
 </#if>
-<#if parameters.hidedlg?default(false)>
+<#if attributes.hidedlg?default(false)>
 options_${escapedOptionId}_colmodels_${colName}.hidedlg = true;
 </#if>
-<#if parameters.hidden?default(false)>
+<#if attributes.hidden?default(false)>
 options_${escapedOptionId}_colmodels_${colName}.hidden = true;
 </#if>
-<#if parameters.defval?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.defval = "${parameters.defval}";
+<#if attributes.defval?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.defval = "${attributes.defval}";
 </#if>
-<#if parameters.surl?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.surl = "${parameters.surl?string}";
+<#if attributes.surl?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.surl = "${attributes.surl?string}";
 </#if>
-<#if parameters.searchoptions?if_exists != "">
-options_${escapedOptionId}_colmodels_${colName}.searchoptions = <#outputformat "JavaScript">${parameters.searchoptions}</#outputformat>;
+<#if attributes.searchoptions?if_exists != "">
+options_${escapedOptionId}_colmodels_${colName}.searchoptions = <#outputformat "JavaScript">${attributes.searchoptions}</#outputformat>;
 </#if>
-<#if !parameters.displayTitle?default(true)>
+<#if !attributes.displayTitle?default(true)>
 options_${escapedOptionId}_colmodels_${colName}.title = false;
 </#if>
 
-options_${escapedOptionId}_colnames.push("${parameters.title}");
+options_${escapedOptionId}_colnames.push("${attributes.title}");
 options_${escapedOptionId}_colmodels.push(options_${escapedOptionId}_colmodels_${colName});

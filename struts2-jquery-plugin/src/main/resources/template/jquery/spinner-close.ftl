@@ -18,46 +18,46 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_${escapedOptionId} = {};
 	options_${escapedOptionId}.type = 'text';
-  <#if parameters.max??>
-	options_${escapedOptionId}.max = ${parameters.max?c};
+  <#if attributes.max??>
+	options_${escapedOptionId}.max = ${attributes.max?c};
   </#if>
-  <#if parameters.min??>
-	options_${escapedOptionId}.min = ${parameters.min?c};
+  <#if attributes.min??>
+	options_${escapedOptionId}.min = ${attributes.min?c};
   </#if>
-  <#if parameters.step??>
-	options_${escapedOptionId}.step = ${parameters.step?c};
+  <#if attributes.step??>
+	options_${escapedOptionId}.step = ${attributes.step?c};
   </#if>
-  <#if parameters.culture! != "">
-	options_${escapedOptionId}.culture = "${parameters.culture}";
+  <#if attributes.culture! != "">
+	options_${escapedOptionId}.culture = "${attributes.culture}";
   </#if>
-  <#if parameters.numberFormat! != "">
-	options_${escapedOptionId}.numberFormat = "${parameters.numberFormat}";
+  <#if attributes.numberFormat! != "">
+	options_${escapedOptionId}.numberFormat = "${attributes.numberFormat}";
   </#if>
-  <#if parameters.page??>
-	options_${escapedOptionId}.page = ${parameters.page?c};
+  <#if attributes.page??>
+	options_${escapedOptionId}.page = ${attributes.page?c};
   </#if>
-  <#if parameters.mouseWheel??>
-	options_${escapedOptionId}.mouseWheel = ${parameters.mouseWheel?string};
+  <#if attributes.mouseWheel??>
+	options_${escapedOptionId}.mouseWheel = ${attributes.mouseWheel?string};
   </#if>
-  <#if parameters.incremental??>
-	options_${escapedOptionId}.incremental = ${parameters.incremental?string};
+  <#if attributes.incremental??>
+	options_${escapedOptionId}.incremental = ${attributes.incremental?string};
   </#if>
-  <#include "/${parameters.templateDir}/jquery/base.ftl" />
-  <#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-  <#include "/${parameters.templateDir}/jquery/topics.ftl" />
-  <#include "/${parameters.templateDir}/jquery/action.ftl" />
-  <#include "/${parameters.templateDir}/jquery/container.ftl" />
-  <#include "/${parameters.templateDir}/jquery/draggable.ftl" />
-  <#include "/${parameters.templateDir}/jquery/droppable.ftl" />
-  <#include "/${parameters.templateDir}/jquery/resizable.ftl" />
-  <#include "/${parameters.templateDir}/jquery/selectable.ftl" />
-  <#include "/${parameters.templateDir}/jquery/sortable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/base.ftl" />
+  <#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+  <#include "/${attributes.templateDir}/jquery/topics.ftl" />
+  <#include "/${attributes.templateDir}/jquery/action.ftl" />
+  <#include "/${attributes.templateDir}/jquery/container.ftl" />
+  <#include "/${attributes.templateDir}/jquery/draggable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/droppable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/resizable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/selectable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/sortable.ftl" />
 
-  <#include "/${parameters.templateDir}/jquery/jquery-ui-bind.ftl" />
+  <#include "/${attributes.templateDir}/jquery/jquery-ui-bind.ftl" />
  });
 </@s.script>

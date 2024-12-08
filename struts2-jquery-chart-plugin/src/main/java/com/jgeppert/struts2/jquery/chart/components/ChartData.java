@@ -152,7 +152,7 @@ public class ChartData extends AbstractContainer {
             addParameter(PARAM_DATA, findString(data));
         } else {
             if (list == null) {
-                list = parameters.get(PARAM_LIST);
+                list = getAttributes().get(PARAM_LIST);
             }
 
             Object listObject = findValue(list.toString());

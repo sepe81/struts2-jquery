@@ -18,25 +18,25 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
-  <#if parameters.droppable!false>
+<#assign escapedOptionId="${attributes.escapedId}">
+  <#if attributes.droppable!false>
 	options_${escapedOptionId}.droppable = true;<#rt/>
    </#if>
-  <#if parameters.droppableOptions! != "">
-	options_${escapedOptionId}.droppableoptions = "<#outputformat "JavaScript">${parameters.droppableOptions}</#outputformat>";<#rt/>
+  <#if attributes.droppableOptions! != "">
+	options_${escapedOptionId}.droppableoptions = "<#outputformat "JavaScript">${attributes.droppableOptions}</#outputformat>";<#rt/>
    </#if>
-  <#if parameters.droppableOnActivateTopics! != "">
-	options_${escapedOptionId}.droppableonactivatetopics = "${parameters.droppableOnActivateTopics}";<#rt/>
+  <#if attributes.droppableOnActivateTopics! != "">
+	options_${escapedOptionId}.droppableonactivatetopics = "${attributes.droppableOnActivateTopics}";<#rt/>
    </#if>
-  <#if parameters.droppableOnDeactivateTopics! != "">
-	options_${escapedOptionId}.droppableondeactivatetopics = "${parameters.droppableOnDeactivateTopics}";<#rt/>
+  <#if attributes.droppableOnDeactivateTopics! != "">
+	options_${escapedOptionId}.droppableondeactivatetopics = "${attributes.droppableOnDeactivateTopics}";<#rt/>
    </#if>
-  <#if parameters.droppableOnDropTopics! != "">
-	options_${escapedOptionId}.droppableondroptopics = "${parameters.droppableOnDropTopics}";<#rt/>
+  <#if attributes.droppableOnDropTopics! != "">
+	options_${escapedOptionId}.droppableondroptopics = "${attributes.droppableOnDropTopics}";<#rt/>
    </#if>
-  <#if parameters.droppableOnOutTopics! != "">
-	options_${escapedOptionId}.droppableonouttopics = "${parameters.droppableOnOutTopics}";<#rt/>
+  <#if attributes.droppableOnOutTopics! != "">
+	options_${escapedOptionId}.droppableonouttopics = "${attributes.droppableOnOutTopics}";<#rt/>
    </#if>
-  <#if parameters.droppableOnOverTopics! != "">
-	options_${escapedOptionId}.droppableonovertopics = "${parameters.droppableOnOverTopics}";<#rt/>
+  <#if attributes.droppableOnOverTopics! != "">
+	options_${escapedOptionId}.droppableonovertopics = "${attributes.droppableOnOverTopics}";<#rt/>
    </#if>

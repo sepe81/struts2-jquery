@@ -19,18 +19,18 @@
  */
 -->
 	</div>
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_${escapedOptionId} = {};
-	options_${escapedOptionId}.header = "${parameters.header!'h3'}";
-<#if parameters.onClickTopics??>
-	options_${escapedOptionId}.onclick = "${parameters.onClickTopics}";
+	options_${escapedOptionId}.header = "${attributes.header!'h3'}";
+<#if attributes.onClickTopics??>
+	options_${escapedOptionId}.onclick = "${attributes.onClickTopics}";
   </#if>
-<#include "/${parameters.templateDir}/jquery/base.ftl" />
-<#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-<#include "/${parameters.templateDir}/jquery/topics.ftl" />
+<#include "/${attributes.templateDir}/jquery/base.ftl" />
+<#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+<#include "/${attributes.templateDir}/jquery/topics.ftl" />
 
-<#include "/${parameters.templateDir}/jquery/jquery-ui-bind.ftl" />
+<#include "/${attributes.templateDir}/jquery/jquery-ui-bind.ftl" />
  });
 </@s.script>

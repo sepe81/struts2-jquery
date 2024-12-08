@@ -18,48 +18,48 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 </div>
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_${escapedOptionId} = {};
-  <#if parameters.value! != "">
-	options_${escapedOptionId}.value = ${parameters.value!'0'};
+  <#if attributes.value! != "">
+	options_${escapedOptionId}.value = ${attributes.value!'0'};
   </#if>
-  <#if parameters.arrayValue! != "">
-	options_${escapedOptionId}.values = ${parameters.arrayValue?string};
+  <#if attributes.arrayValue! != "">
+	options_${escapedOptionId}.values = ${attributes.arrayValue?string};
   </#if>
-  <#if parameters.widgetid! != "">
-	options_${escapedOptionId}.hiddenid = "${parameters.widgetid}";
+  <#if attributes.widgetid! != "">
+	options_${escapedOptionId}.hiddenid = "${attributes.widgetid}";
   </#if>
-  <#if parameters.animate!false>
+  <#if attributes.animate!false>
 	options_${escapedOptionId}.animate = true;
   </#if>
-  <#if parameters.range! != "">
-	options_${escapedOptionId}.range = "${parameters.range}";
+  <#if attributes.range! != "">
+	options_${escapedOptionId}.range = "${attributes.range}";
   </#if>
-  <#if parameters.max??>
-	options_${escapedOptionId}.max = ${parameters.max?c};
+  <#if attributes.max??>
+	options_${escapedOptionId}.max = ${attributes.max?c};
   </#if>
-  <#if parameters.min??>
-	options_${escapedOptionId}.min = ${parameters.min?c};
+  <#if attributes.min??>
+	options_${escapedOptionId}.min = ${attributes.min?c};
   </#if>
-  <#if parameters.orientation! != "">
-	options_${escapedOptionId}.orientation = "${parameters.orientation}";
+  <#if attributes.orientation! != "">
+	options_${escapedOptionId}.orientation = "${attributes.orientation}";
   </#if>
-  <#if parameters.step??>
-	options_${escapedOptionId}.step = ${parameters.step?c};
+  <#if attributes.step??>
+	options_${escapedOptionId}.step = ${attributes.step?c};
   </#if>
-  <#if parameters.displayValueElement! != "">
-	options_${escapedOptionId}.displayvalueelement = "${parameters.displayValueElement}";
+  <#if attributes.displayValueElement! != "">
+	options_${escapedOptionId}.displayvalueelement = "${attributes.displayValueElement}";
   </#if>
-  <#if parameters.onSlideTopics??>
-	options_${escapedOptionId}.onslidetopics = "${parameters.onSlideTopics}";
+  <#if attributes.onSlideTopics??>
+	options_${escapedOptionId}.onslidetopics = "${attributes.onSlideTopics}";
   </#if>
-<#include "/${parameters.templateDir}/jquery/base.ftl" />
-<#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-<#include "/${parameters.templateDir}/jquery/topics.ftl" />
+<#include "/${attributes.templateDir}/jquery/base.ftl" />
+<#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+<#include "/${attributes.templateDir}/jquery/topics.ftl" />
 
-<#include "/${parameters.templateDir}/jquery/jquery-ui-bind.ftl" />
+<#include "/${attributes.templateDir}/jquery/jquery-ui-bind.ftl" />
  });
 </@s.script>

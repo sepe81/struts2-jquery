@@ -18,12 +18,12 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
-<#if parameters.list?? >
-<@s.iterator value="parameters.list" status="rowstatus">
-        <#if parameters.listKey??>
-            <#if stack.findValue(parameters.listKey)??>
-              <#assign itemKey = stack.findValue(parameters.listKey)/>
+<#assign escapedOptionId="${attributes.escapedId}">
+<#if attributes.list?? >
+<@s.iterator value="attributes.list" status="rowstatus">
+        <#if attributes.listKey??>
+            <#if stack.findValue(attributes.listKey)??>
+              <#assign itemKey = stack.findValue(attributes.listKey)/>
               <#assign itemKeyStr = itemKey.toString()/>
             <#else>
               <#assign itemKey = ''/>
@@ -33,30 +33,30 @@
             <#assign itemKey = stack.findValue('top')/>
             <#assign itemKeyStr = itemKey.toString()/>
         </#if>
-        <#if parameters.listValue??>
-            <#if stack.findString(parameters.listValue)??>
-              <#assign itemValue = stack.findString(parameters.listValue)/>
+        <#if attributes.listValue??>
+            <#if stack.findString(attributes.listValue)??>
+              <#assign itemValue = stack.findString(attributes.listValue)/>
             <#else>
               <#assign itemValue = ''/>
             </#if>
         <#else>
             <#assign itemValue = stack.findString('top')/>
         </#if>
- 		<#if parameters.paramValues! != "">
+ 		<#if attributes.paramValues! != "">
 		<#assign hrefValues>
-        	<#list parameters.paramValues?split(",") as tmp>${stack.findString(tmp)!''}<#if tmp_has_next>,</#if></#list>
+        	<#list attributes.paramValues?split(",") as tmp>${stack.findString(tmp)!''}<#if tmp_has_next>,</#if></#list>
 		</#assign>
         </#if>
-	<${parameters.header!'h3'} id="${escapedOptionId}_header_<@s.property value="%{#rowstatus.count}" />"><a id="${escapedOptionId}_a_<@s.property value="%{#rowstatus.count}" />" href="#"
-<#if parameters.paramKeys! != "">
-	 data-keys="${parameters.paramKeys?trim}"
+	<${attributes.header!'h3'} id="${escapedOptionId}_header_<@s.property value="%{#rowstatus.count}" />"><a id="${escapedOptionId}_a_<@s.property value="%{#rowstatus.count}" />" href="#"
+<#if attributes.paramKeys! != "">
+	 data-keys="${attributes.paramKeys?trim}"
 </#if>
-<#if parameters.paramValues! != "">
+<#if attributes.paramValues! != "">
 	 data-values="<#outputformat "HTML">${hrefValues}</#outputformat>"
 </#if>
-	 >${itemKeyStr}</a></${parameters.header!'h3'}>
+	 >${itemKeyStr}</a></${attributes.header!'h3'}>
 		<div id="${escapedOptionId}_div_<@s.property value="%{#rowstatus.count}" />">
-<#if parameters.href! == "">
+<#if attributes.href! == "">
 			${itemValue}
 </#if>
 		</div>
@@ -67,34 +67,34 @@
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_${escapedOptionId} = {};
-  <#if parameters.collapsible!false>
+  <#if attributes.collapsible!false>
 	options_${escapedOptionId}.collapsible = true;
   </#if>
-  <#if parameters.openOnMouseover!false>
+  <#if attributes.openOnMouseover!false>
 	options_${escapedOptionId}.event = "mouseover";
   </#if>
-  <#if parameters.heightStyle! != "">
-	options_${escapedOptionId}.heightStyle = "${parameters.heightStyle}";
+  <#if attributes.heightStyle! != "">
+	options_${escapedOptionId}.heightStyle = "${attributes.heightStyle}";
   </#if>
-  <#if parameters.active! != "">
-	options_${escapedOptionId}.active = "${parameters.active}";
+  <#if attributes.active! != "">
+	options_${escapedOptionId}.active = "${attributes.active}";
   </#if>
-  <#if parameters.href! != "">
-	options_${escapedOptionId}.href = "<#outputformat "JavaScript">${parameters.href}</#outputformat>";
+  <#if attributes.href! != "">
+	options_${escapedOptionId}.href = "<#outputformat "JavaScript">${attributes.href}</#outputformat>";
   </#if>
-  <#if parameters.header! != "">
-	options_${escapedOptionId}.header = "${parameters.header}";
+  <#if attributes.header! != "">
+	options_${escapedOptionId}.header = "${attributes.header}";
   </#if>
-<#if parameters.animate! != "">
-	options_${escapedOptionId}.animate = ${parameters.animate};
+<#if attributes.animate! != "">
+	options_${escapedOptionId}.animate = ${attributes.animate};
 </#if>
-<#if parameters.onCreateTopics??>
-    options_${escapedOptionId}.oncreate = "${parameters.onCreateTopics}";
+<#if attributes.onCreateTopics??>
+    options_${escapedOptionId}.oncreate = "${attributes.onCreateTopics}";
 </#if>
-  <#include "/${parameters.templateDir}/jquery/base.ftl" />
-  <#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-  <#include "/${parameters.templateDir}/jquery/topics.ftl" />
+  <#include "/${attributes.templateDir}/jquery/base.ftl" />
+  <#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+  <#include "/${attributes.templateDir}/jquery/topics.ftl" />
 
-  <#include "/${parameters.templateDir}/jquery/jquery-ui-bind.ftl" />
+  <#include "/${attributes.templateDir}/jquery/jquery-ui-bind.ftl" />
  });
 </@s.script>

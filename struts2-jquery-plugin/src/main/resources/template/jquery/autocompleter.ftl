@@ -18,56 +18,56 @@
  * under the License.
  */
 -->
-<#if parameters.parentTheme == 'xhtml' || parameters.parentTheme == 'css_xhtml' || parameters.parentTheme == 'simple'>
-	<#if parameters.parentTheme == 'xhtml'>
-		<#include "/${parameters.templateDir}/xhtml/controlheader.ftl" />
+<#if attributes.parentTheme == 'xhtml' || attributes.parentTheme == 'css_xhtml' || attributes.parentTheme == 'simple'>
+	<#if attributes.parentTheme == 'xhtml'>
+		<#include "/${attributes.templateDir}/xhtml/controlheader.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'css_xhtml'>
-		<#include "/${parameters.templateDir}/css_xhtml/controlheader.ftl" />
+	<#if attributes.parentTheme == 'css_xhtml'>
+		<#include "/${attributes.templateDir}/css_xhtml/controlheader.ftl" />
 	</#if>
 		<input type="hidden"
-		  <#if parameters.widgetid?if_exists != "">
-		    id="${parameters.widgetid}"<#rt/>
+		  <#if attributes.widgetid?if_exists != "">
+		    id="${attributes.widgetid}"<#rt/>
 		  </#if>
-		  <#if parameters.nameValue??>
-		    value="<@s.property value="parameters.nameValue"/>"<#rt/>
+		  <#if attributes.nameValue??>
+		    value="<@s.property value="attributes.nameValue"/>"<#rt/>
 		  </#if>
-		  <#if parameters.widgetname?if_exists != "">
-		 	name="${parameters.widgetname}"<#rt/>
+		  <#if attributes.widgetname?if_exists != "">
+		 	name="${attributes.widgetname}"<#rt/>
 		  </#if>
-		  <#if parameters.disabled?default(false)>
+		  <#if attributes.disabled?default(false)>
 		    disabled="disabled"<#rt/>
 		  </#if>
 		/>
-	<#if (parameters.list?? && parameters.listKey??) || parameters.selectBox??>
-		<#include "/${parameters.templateDir}/simple/select.ftl" />
+	<#if (attributes.list?? && attributes.listKey??) || attributes.selectBox??>
+		<#include "/${attributes.templateDir}/simple/select.ftl" />
   	<#else>
-		<#include "/${parameters.templateDir}/simple/text.ftl" />
+		<#include "/${attributes.templateDir}/simple/text.ftl" />
   	</#if>
-	<#if parameters.parentTheme == 'xhtml'>
-		<#include "/${parameters.templateDir}/xhtml/controlfooter.ftl" />
+	<#if attributes.parentTheme == 'xhtml'>
+		<#include "/${attributes.templateDir}/xhtml/controlfooter.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'css_xhtml'>
-		<#include "/${parameters.templateDir}/css_xhtml/controlfooter.ftl" />
+	<#if attributes.parentTheme == 'css_xhtml'>
+		<#include "/${attributes.templateDir}/css_xhtml/controlfooter.ftl" />
 	</#if>
 <#else>
 	<input type="hidden"
-	  <#if parameters.widgetid?if_exists != "">
-	    id="${parameters.widgetid}"<#rt/>
+	  <#if attributes.widgetid?if_exists != "">
+	    id="${attributes.widgetid}"<#rt/>
 	  </#if>
-	  <#if parameters.nameValue??>
-	    value="<@s.property value="parameters.nameValue"/>"<#rt/>
+	  <#if attributes.nameValue??>
+	    value="<@s.property value="attributes.nameValue"/>"<#rt/>
 	  </#if>
-	  <#if parameters.widgetname?if_exists != "">
-	 	name="${parameters.widgetname}"<#rt/>
+	  <#if attributes.widgetname?if_exists != "">
+	 	name="${attributes.widgetname}"<#rt/>
 	  </#if>
-	  <#if parameters.disabled?default(false)>
+	  <#if attributes.disabled?default(false)>
 	    disabled="disabled"<#rt/>
 	  </#if>
 	/>
-	<#if (parameters.list?? && parameters.listKey??) || parameters.selectBox??>
-		<#include "/${parameters.templateDir}/${parameters.parentTheme}/select.ftl" />
+	<#if (attributes.list?? && attributes.listKey??) || attributes.selectBox??>
+		<#include "/${attributes.templateDir}/${attributes.parentTheme}/select.ftl" />
   	<#else>
-  		<#include "/${parameters.templateDir}/${parameters.parentTheme}/text.ftl" />
+  		<#include "/${attributes.templateDir}/${attributes.parentTheme}/text.ftl" />
   	</#if>
 </#if>

@@ -18,104 +18,104 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 </div>
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_${escapedOptionId} = {};
-  <#if parameters.height! != "">
-  	<#if parameters.height! == "auto">
+  <#if attributes.height! != "">
+  	<#if attributes.height! == "auto">
 	options_${escapedOptionId}.height = "auto";
   	<#else>
-	options_${escapedOptionId}.height = ${parameters.height};
+	options_${escapedOptionId}.height = ${attributes.height};
   	</#if>
   </#if>
-  <#if parameters.width! != "">
- 	<#if parameters.width! == "auto">
+  <#if attributes.width! != "">
+ 	<#if attributes.width! == "auto">
 	options_${escapedOptionId}.width = "auto";
   	<#else>
-	options_${escapedOptionId}.width = ${parameters.width};
+	options_${escapedOptionId}.width = ${attributes.width};
   	</#if>
   </#if>
-   <#if parameters.maxHeight! != "">
-	options_${escapedOptionId}.maxHeight = ${parameters.maxHeight};
+   <#if attributes.maxHeight! != "">
+	options_${escapedOptionId}.maxHeight = ${attributes.maxHeight};
   </#if>
-  <#if parameters.maxWidth! != "">
-	options_${escapedOptionId}.maxWidth = ${parameters.maxWidth};
+  <#if attributes.maxWidth! != "">
+	options_${escapedOptionId}.maxWidth = ${attributes.maxWidth};
   </#if>
-   <#if parameters.minHeight! != "">
-	options_${escapedOptionId}.minHeight = ${parameters.minHeight};
+   <#if attributes.minHeight! != "">
+	options_${escapedOptionId}.minHeight = ${attributes.minHeight};
   </#if>
-  <#if parameters.minWidth! != "">
-	options_${escapedOptionId}.minWidth = ${parameters.minWidth};
+  <#if attributes.minWidth! != "">
+	options_${escapedOptionId}.minWidth = ${attributes.minWidth};
   </#if>
-  <#if parameters.title! != "">
-	options_${escapedOptionId}.title = "<#outputformat 'JavaScript'>${parameters.title}</#outputformat>";
+  <#if attributes.title! != "">
+	options_${escapedOptionId}.title = "<#outputformat 'JavaScript'>${attributes.title}</#outputformat>";
   </#if>
-  <#if parameters.dialogClass! != "">
-	options_${escapedOptionId}.dialogClass = "${parameters.dialogClass}";
+  <#if attributes.dialogClass! != "">
+	options_${escapedOptionId}.dialogClass = "${attributes.dialogClass}";
   </#if>
-  <#if parameters.showEffect! != "">
-	options_${escapedOptionId}.show = "${parameters.showEffect}";
+  <#if attributes.showEffect! != "">
+	options_${escapedOptionId}.show = "${attributes.showEffect}";
   </#if>
-  <#if parameters.hideEffect! != "">
-	options_${escapedOptionId}.hide = "${parameters.hideEffect}";
+  <#if attributes.hideEffect! != "">
+	options_${escapedOptionId}.hide = "${attributes.hideEffect}";
   </#if>
-  <#if parameters.position! != "">
+  <#if attributes.position! != "">
   	  <#-- Is position an Array or Object? -->
-	  <#if parameters.position?substring(0, 1) == "[" || parameters.position?substring(0, 1) == "{">
-	options_${escapedOptionId}.position = <#outputformat 'JavaScript'>${parameters.position}</#outputformat>;
+	  <#if attributes.position?substring(0, 1) == "[" || attributes.position?substring(0, 1) == "{">
+	options_${escapedOptionId}.position = <#outputformat 'JavaScript'>${attributes.position}</#outputformat>;
 	  <#else>
-	options_${escapedOptionId}.position = <#outputformat 'JavaScript'>"${parameters.position}"</#outputformat>;
+	options_${escapedOptionId}.position = <#outputformat 'JavaScript'>"${attributes.position}"</#outputformat>;
 	  </#if>
   </#if>
-  <#if parameters.appendTo! != "">
-    options_${escapedOptionId}.appendTo = "${parameters.appendTo}";
+  <#if attributes.appendTo! != "">
+    options_${escapedOptionId}.appendTo = "${attributes.appendTo}";
   </#if>
-  <#if parameters.buttons! != "">
-	options_${escapedOptionId}.buttons = ${parameters.buttons?no_esc};
+  <#if attributes.buttons! != "">
+	options_${escapedOptionId}.buttons = ${attributes.buttons?no_esc};
   </#if>
-  <#if parameters.draggable??>
-	options_${escapedOptionId}.draggable = ${parameters.draggable?string};
+  <#if attributes.draggable??>
+	options_${escapedOptionId}.draggable = ${attributes.draggable?string};
   </#if>
-  <#if parameters.resizable??>
-	options_${escapedOptionId}.resizable = ${parameters.resizable?string};
+  <#if attributes.resizable??>
+	options_${escapedOptionId}.resizable = ${attributes.resizable?string};
   </#if>
-  <#if parameters.autoOpen??>
-	options_${escapedOptionId}.autoOpen = ${parameters.autoOpen?string};
+  <#if attributes.autoOpen??>
+	options_${escapedOptionId}.autoOpen = ${attributes.autoOpen?string};
   </#if>
-  <#if parameters.closeOnEscape??>
-	options_${escapedOptionId}.closeOnEscape = ${parameters.closeOnEscape?string};
+  <#if attributes.closeOnEscape??>
+	options_${escapedOptionId}.closeOnEscape = ${attributes.closeOnEscape?string};
   </#if>
-  <#if parameters.modal! == "true" >
+  <#if attributes.modal! == "true" >
 	options_${escapedOptionId}.modal = true;
   </#if>
-  <#if parameters.onOpenTopics! != "">
-	options_${escapedOptionId}.onopentopics = "${parameters.onOpenTopics}";
+  <#if attributes.onOpenTopics! != "">
+	options_${escapedOptionId}.onopentopics = "${attributes.onOpenTopics}";
   </#if>
-  <#if parameters.onCloseTopics! != "">
-	options_${escapedOptionId}.onclosetopics = "${parameters.onCloseTopics}";
+  <#if attributes.onCloseTopics! != "">
+	options_${escapedOptionId}.onclosetopics = "${attributes.onCloseTopics}";
   </#if>
-  <#if parameters.onFocusTopics! != "">
-	options_${escapedOptionId}.onfocustopics = "${parameters.onFocusTopics}";
+  <#if attributes.onFocusTopics! != "">
+	options_${escapedOptionId}.onfocustopics = "${attributes.onFocusTopics}";
   </#if>
-  <#if parameters.onBeforeCloseTopics! != "">
-	options_${escapedOptionId}.onbeforeclosetopics = "${parameters.onBeforeCloseTopics}";
+  <#if attributes.onBeforeCloseTopics! != "">
+	options_${escapedOptionId}.onbeforeclosetopics = "${attributes.onBeforeCloseTopics}";
   </#if>
-  <#if parameters.openTopics! != "">
-	options_${escapedOptionId}.opentopics = "${parameters.openTopics}";
+  <#if attributes.openTopics! != "">
+	options_${escapedOptionId}.opentopics = "${attributes.openTopics}";
   </#if>
-  <#if parameters.closeTopics! != "">
-	options_${escapedOptionId}.closetopics = "${parameters.closeTopics}";
+  <#if attributes.closeTopics! != "">
+	options_${escapedOptionId}.closetopics = "${attributes.closeTopics}";
   </#if>
-  <#if parameters.destroyTopics! != "">
-	options_${escapedOptionId}.destroytopics = "${parameters.destroyTopics}";
+  <#if attributes.destroyTopics! != "">
+	options_${escapedOptionId}.destroytopics = "${attributes.destroyTopics}";
   </#if>
-<#include "/${parameters.templateDir}/jquery/base.ftl" />
-<#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-<#include "/${parameters.templateDir}/jquery/topics.ftl" />
-<#include "/${parameters.templateDir}/jquery/action.ftl" />
+<#include "/${attributes.templateDir}/jquery/base.ftl" />
+<#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+<#include "/${attributes.templateDir}/jquery/topics.ftl" />
+<#include "/${attributes.templateDir}/jquery/action.ftl" />
 
-<#include "/${parameters.templateDir}/jquery/jquery-ui-bind.ftl" />
+<#include "/${attributes.templateDir}/jquery/jquery-ui-bind.ftl" />
  });
 </@s.script>

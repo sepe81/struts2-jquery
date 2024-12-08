@@ -24,6 +24,8 @@ A Plugin for the popular java web framework struts2 to provide ajax functionalit
 ### versions and compatibility
 | `struts2-jquery` version | `struts2` version               |
 |--------------------------|---------------------------------|
+| `5.0.7`                  | version >= `6.7.0`              |
+| `5.0.6`                  | version >= `6.6.0`              |
 | `5.0.2`                  | version >= `6.1`                |
 | `5.0.0`                  | version >= `6.0`                |
 | `4.0.3`                  | version >= `2.5`                |

@@ -18,46 +18,46 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
-  <#if parameters.sortable!false>
+<#assign escapedOptionId="${attributes.escapedId}">
+  <#if attributes.sortable!false>
 	options_${escapedOptionId}.sortable = true;<#rt/>
    </#if>
-  <#if parameters.sortableOptions! != "">
- 	options_${escapedOptionId}.sortableoptions = "<#outputformat "JavaScript">${parameters.sortableOptions}</#outputformat>";<#rt/>
+  <#if attributes.sortableOptions! != "">
+ 	options_${escapedOptionId}.sortableoptions = "<#outputformat "JavaScript">${attributes.sortableOptions}</#outputformat>";<#rt/>
    </#if>
-  <#if parameters.sortableOnBeforeStopTopics! != "">
- 	options_${escapedOptionId}.sortableonbeforestoptopics = "${parameters.sortableOnBeforeStopTopics}";<#rt/>
+  <#if attributes.sortableOnBeforeStopTopics! != "">
+ 	options_${escapedOptionId}.sortableonbeforestoptopics = "${attributes.sortableOnBeforeStopTopics}";<#rt/>
    </#if>
-  <#if parameters.sortableOnStopTopics! != "">
- 	options_${escapedOptionId}.sortableonstoptopics = "${parameters.sortableOnStopTopics}";<#rt/>
+  <#if attributes.sortableOnStopTopics! != "">
+ 	options_${escapedOptionId}.sortableonstoptopics = "${attributes.sortableOnStopTopics}";<#rt/>
    </#if>
-  <#if parameters.sortableOnStartTopics! != "">
- 	options_${escapedOptionId}.sortableonstarttopics = "${parameters.sortableOnStartTopics}";<#rt/>
+  <#if attributes.sortableOnStartTopics! != "">
+ 	options_${escapedOptionId}.sortableonstarttopics = "${attributes.sortableOnStartTopics}";<#rt/>
    </#if>
-  <#if parameters.sortableOnSortTopics! != "">
- 	options_${escapedOptionId}.sortableonsorttopics = "${parameters.sortableOnSortTopics}";<#rt/>
+  <#if attributes.sortableOnSortTopics! != "">
+ 	options_${escapedOptionId}.sortableonsorttopics = "${attributes.sortableOnSortTopics}";<#rt/>
    </#if>
-  <#if parameters.sortableOnActivateTopics! != "">
- 	options_${escapedOptionId}.sortableonactivatetopics = "${parameters.sortableOnActivateTopics}";<#rt/>
+  <#if attributes.sortableOnActivateTopics! != "">
+ 	options_${escapedOptionId}.sortableonactivatetopics = "${attributes.sortableOnActivateTopics}";<#rt/>
    </#if>
-  <#if parameters.sortableOnDeactivateTopics! != "">
- 	options_${escapedOptionId}.sortableondeactivatetopics = "${parameters.sortableOnDeactivateTopics}";<#rt/>
+  <#if attributes.sortableOnDeactivateTopics! != "">
+ 	options_${escapedOptionId}.sortableondeactivatetopics = "${attributes.sortableOnDeactivateTopics}";<#rt/>
    </#if>
-  <#if parameters.sortableOnOverTopics! != "">
- 	options_${escapedOptionId}.sortableonovertopics = "${parameters.sortableOnOverTopics}";<#rt/>
+  <#if attributes.sortableOnOverTopics! != "">
+ 	options_${escapedOptionId}.sortableonovertopics = "${attributes.sortableOnOverTopics}";<#rt/>
    </#if>
-  <#if parameters.sortableOnOutTopics! != "">
- 	options_${escapedOptionId}.sortableonouttopics = "${parameters.sortableOnOutTopics}";<#rt/>
+  <#if attributes.sortableOnOutTopics! != "">
+ 	options_${escapedOptionId}.sortableonouttopics = "${attributes.sortableOnOutTopics}";<#rt/>
    </#if>
-  <#if parameters.sortableOnRemoveTopics! != "">
- 	options_${escapedOptionId}.sortableonremovetopics = "${parameters.sortableOnRemoveTopics}";<#rt/>
+  <#if attributes.sortableOnRemoveTopics! != "">
+ 	options_${escapedOptionId}.sortableonremovetopics = "${attributes.sortableOnRemoveTopics}";<#rt/>
    </#if>
-  <#if parameters.sortableOnReceiveTopics! != "">
- 	options_${escapedOptionId}.sortableonreceivetopics = "${parameters.sortableOnReceiveTopics}";<#rt/>
+  <#if attributes.sortableOnReceiveTopics! != "">
+ 	options_${escapedOptionId}.sortableonreceivetopics = "${attributes.sortableOnReceiveTopics}";<#rt/>
    </#if>
-  <#if parameters.sortableOnChangeTopics! != "">
- 	options_${escapedOptionId}.sortableonchangetopics = "${parameters.sortableOnChangeTopics}";<#rt/>
+  <#if attributes.sortableOnChangeTopics! != "">
+ 	options_${escapedOptionId}.sortableonchangetopics = "${attributes.sortableOnChangeTopics}";<#rt/>
    </#if>
-  <#if parameters.sortableOnUpdateTopics! != "">
- 	options_${escapedOptionId}.sortableonupdatetopics = "${parameters.sortableOnUpdateTopics}";<#rt/>
+  <#if attributes.sortableOnUpdateTopics! != "">
+ 	options_${escapedOptionId}.sortableonupdatetopics = "${attributes.sortableOnUpdateTopics}";<#rt/>
    </#if>

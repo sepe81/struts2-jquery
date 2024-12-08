@@ -18,10 +18,10 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
-  <#if parameters.enableTopics??>
-	options_${escapedOptionId}.onenabletopics = "${parameters.onEnableTopics}";<#rt/>
+<#assign escapedOptionId="${attributes.escapedId}">
+  <#if attributes.enableTopics??>
+	options_${escapedOptionId}.onenabletopics = "${attributes.onEnableTopics}";<#rt/>
   </#if>
-  <#if parameters.disableTopics??>
-	options_${escapedOptionId}.ondisabletopics = "${parameters.onDisableTopics}";<#rt/>
+  <#if attributes.disableTopics??>
+	options_${escapedOptionId}.ondisabletopics = "${attributes.onDisableTopics}";<#rt/>
   </#if>

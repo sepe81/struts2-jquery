@@ -18,14 +18,14 @@
  * under the License.
  */
 -->
-<div id="${parameters.id}"
-<#if parameters.cssStyle?if_exists != "">
- style="${parameters.cssStyle}"<#rt/>
+<div id="${attributes.id}"
+<#if attributes.cssStyle?if_exists != "">
+ style="${attributes.cssStyle}"<#rt/>
 </#if>
-<#if parameters.cssClass?if_exists != "">
- class="${parameters.cssClass}"<#rt/>
+<#if attributes.cssClass?if_exists != "">
+ class="${attributes.cssClass}"<#rt/>
 </#if>
-<#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-<#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-<#include "/${parameters.templateDir}/simple/dynamic-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+<#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/dynamic-attributes.ftl" />
 >

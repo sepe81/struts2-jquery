@@ -18,13 +18,13 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
-<#if parameters.list?? >
-    <@s.iterator value="parameters.list" status="rowstatus">
-        <#if parameters.listKey??>
-            <#if stack.findValue(parameters.listKey)??>
-                <#assign itemKey = stack.findValue(parameters.listKey)/>
-                <#assign itemKeyStr = stack.findString(parameters.listKey)/>
+<#assign escapedOptionId="${attributes.escapedId}">
+<#if attributes.list?? >
+    <@s.iterator value="attributes.list" status="rowstatus">
+        <#if attributes.listKey??>
+            <#if stack.findValue(attributes.listKey)??>
+                <#assign itemKey = stack.findValue(attributes.listKey)/>
+                <#assign itemKeyStr = stack.findString(attributes.listKey)/>
             <#else>
                 <#assign itemKey = ''/>
                 <#assign itemKeyStr = ''/>
@@ -33,9 +33,9 @@
             <#assign itemKey = stack.findValue('top')/>
             <#assign itemKeyStr = stack.findString('top')>
         </#if>
-        <#if parameters.listValue??>
-            <#if stack.findString(parameters.listValue)??>
-                <#assign itemValue = stack.findString(parameters.listValue)/>
+        <#if attributes.listValue??>
+            <#if stack.findString(attributes.listValue)??>
+                <#assign itemValue = stack.findString(attributes.listValue)/>
             <#else>
                 <#assign itemValue = ''/>
             </#if>
@@ -45,15 +45,15 @@
         <#if itemValue! == "">
             <#assign itemValue = itemKeyStr/>
         </#if>
-        <#if parameters.paramValues! != "">
+        <#if attributes.paramValues! != "">
             <#assign hrefValues>
-                <#list parameters.paramValues?split(",") as tmp>${stack.findString(tmp)!''}<#if tmp_has_next>,</#if></#list>
+                <#list attributes.paramValues?split(",") as tmp>${stack.findString(tmp)!''}<#if tmp_has_next>,</#if></#list>
             </#assign>
         </#if>
         <li id="${escapedOptionId}_li_<@s.property value="%{#rowstatus.count}" />">
             <div>
-                <#if parameters.href??>
-                    <#if parameters.targets! != "">
+                <#if attributes.href??>
+                    <#if attributes.targets! != "">
                         <a id="${escapedOptionId}_li_<@s.property value="%{#rowstatus.count}" />_anchor" href="javascript:void(0)">
                             ${itemValue}
                         </a>
@@ -64,18 +64,18 @@
                                 var ${optionsLiVariableName} = {};
                                 ${optionsLiVariableName}.jqueryaction = "menuItem";
                                 ${optionsLiVariableName}.id = "${escapedOptionId}_li_<@s.property value="%{#rowstatus.count}" />";
-                            <#if parameters.targets! != "">
-                                ${optionsLiVariableName}.targets = "${parameters.targets}";
+                            <#if attributes.targets! != "">
+                                ${optionsLiVariableName}.targets = "${attributes.targets}";
                             </#if>
-                            <#if parameters.href! != "">
-                                ${optionsLiVariableName}.href = "${parameters.href}";
+                            <#if attributes.href! != "">
+                                ${optionsLiVariableName}.href = "${attributes.href}";
                             </#if>
-                                ${optionsLiVariableName}.hrefparameter = "${parameters.paramName!'id'}=${itemKeyStr}";
+                                ${optionsLiVariableName}.hrefparameter = "${attributes.paramName!'id'}=${itemKeyStr}";
                                 jQuery.struts2_jquery_ui.bind(jQuery('#${escapedOptionId}_li_<@s.property value="%{#rowstatus.count}" />'), ${optionsLiVariableName});
                             });
                         </@s.script>
                     <#else>
-                        <a href="${parameters.href}?${parameters.paramName!'id'}=${itemKeyStr}">
+                        <a href="${attributes.href}?${attributes.paramName!'id'}=${itemKeyStr}">
                             ${itemValue}
                         </a>
                     </#if>
@@ -89,24 +89,24 @@
     </@s.iterator>
 </#if>
 </ul>
-<#if !parameters.subMenu!false>
+<#if !attributes.subMenu!false>
     <@s.script type='text/javascript'>
         jQuery(document).ready(function () {
             var options_${escapedOptionId} = {};
-        <#if parameters.disabled!false>
+        <#if attributes.disabled!false>
             options_${escapedOptionId}.disabled = true;
         </#if>
-        <#if parameters.targets! != "">
-            options_${escapedOptionId}.targets = "${parameters.targets}";
+        <#if attributes.targets! != "">
+            options_${escapedOptionId}.targets = "${attributes.targets}";
         </#if>
-        <#if parameters.href! != "">
-            options_${escapedOptionId}.href = "${parameters.href}";
+        <#if attributes.href! != "">
+            options_${escapedOptionId}.href = "${attributes.href}";
         </#if>
-            <#include "/${parameters.templateDir}/jquery/base.ftl" />
-            <#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-            <#include "/${parameters.templateDir}/jquery/topics.ftl" />
+            <#include "/${attributes.templateDir}/jquery/base.ftl" />
+            <#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+            <#include "/${attributes.templateDir}/jquery/topics.ftl" />
 
-            <#include "/${parameters.templateDir}/jquery/jquery-ui-bind.ftl" />
+            <#include "/${attributes.templateDir}/jquery/jquery-ui-bind.ftl" />
         });
     </@s.script>
 </#if>

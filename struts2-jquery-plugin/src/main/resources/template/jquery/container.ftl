@@ -18,17 +18,17 @@
  * under the License.
  */
 -->
-  <#assign escapedOptionId="${parameters.escapedId}">
-  <#if parameters.reloadTopics??>
-	options_${escapedOptionId}.reloadtopics = "${parameters.reloadTopics}";
+  <#assign escapedOptionId="${attributes.escapedId}">
+  <#if attributes.reloadTopics??>
+	options_${escapedOptionId}.reloadtopics = "${attributes.reloadTopics}";
   </#if>
-  <#if parameters.bindOn! != "">
-	options_${escapedOptionId}.bindon = "${parameters.bindOn}";
+  <#if attributes.bindOn! != "">
+	options_${escapedOptionId}.bindon = "${attributes.bindOn}";
   </#if>
-  <#if parameters.events! != "">
-	options_${escapedOptionId}.events = "${parameters.events}";
+  <#if attributes.events! != "">
+	options_${escapedOptionId}.events = "${attributes.events}";
   </#if>
-  <#if parameters.deferredLoading!false>
+  <#if attributes.deferredLoading!false>
 	options_${escapedOptionId}.deferredloading = true;
   </#if>
 

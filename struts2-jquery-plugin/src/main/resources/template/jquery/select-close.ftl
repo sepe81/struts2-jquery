@@ -19,67 +19,67 @@
  */
 -->
 
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_${escapedOptionId} = {};
 	options_${escapedOptionId}.datatype = "json";
 	options_${escapedOptionId}.type = 'select';
-<#if parameters.emptyOption!false>
+<#if attributes.emptyOption!false>
 	options_${escapedOptionId}.emptyoption = true;
 </#if>
-<#if parameters.headerKey?? && parameters.headerValue??>
-	options_${escapedOptionId}.headerkey = "${parameters.headerKey}";
-	options_${escapedOptionId}.headervalue = "${parameters.headerValue}";
+<#if attributes.headerKey?? && attributes.headerValue??>
+	options_${escapedOptionId}.headerkey = "${attributes.headerKey}";
+	options_${escapedOptionId}.headervalue = "${attributes.headerValue}";
 </#if>
-<#if parameters.list??>
-	options_${escapedOptionId}.list = "${parameters.list}";
+<#if attributes.list??>
+	options_${escapedOptionId}.list = "${attributes.list}";
 </#if>
-<#if parameters.listKey??>
-	options_${escapedOptionId}.listkey = "${parameters.listKey}";
+<#if attributes.listKey??>
+	options_${escapedOptionId}.listkey = "${attributes.listKey}";
 </#if>
-<#if parameters.listTitle??>
-	options_${escapedOptionId}.listtitle = "${parameters.listTitle}";
+<#if attributes.listTitle??>
+	options_${escapedOptionId}.listtitle = "${attributes.listTitle}";
 </#if>
-<#if parameters.listValue??>
-	options_${escapedOptionId}.listvalue = "${parameters.listValue}";
+<#if attributes.listValue??>
+	options_${escapedOptionId}.listvalue = "${attributes.listValue}";
 </#if>
-<#if parameters.nameValue??>
-	options_${escapedOptionId}.value = "<@s.property value="parameters.nameValue"/>";
+<#if attributes.nameValue??>
+	options_${escapedOptionId}.value = "<@s.property value="attributes.nameValue"/>";
 </#if>
-<#if parameters.bindOn! != "">
-	options_${escapedOptionId}.bindon = "${parameters.bindOn}";
+<#if attributes.bindOn! != "">
+	options_${escapedOptionId}.bindon = "${attributes.bindOn}";
 </#if>
-<#if parameters.events! != "">
-	options_${escapedOptionId}.events = "${parameters.events}";
+<#if attributes.events! != "">
+	options_${escapedOptionId}.events = "${attributes.events}";
 </#if>
-<#if parameters.autocomplete!false>
+<#if attributes.autocomplete!false>
 	options_${escapedOptionId}.autocomplete = true;
 </#if>
-<#if parameters.selectBoxIcon!false >
+<#if attributes.selectBoxIcon!false >
 	options_${escapedOptionId}.icon = true;
 </#if>
-<#if parameters.loadMinimumCount??>
-	options_${escapedOptionId}.minimum = ${parameters.loadMinimumCount};
+<#if attributes.loadMinimumCount??>
+	options_${escapedOptionId}.minimum = ${attributes.loadMinimumCount};
 </#if>
-<#if parameters.onSelectTopics! != "">
-	options_${escapedOptionId}.onselecttopics = "${parameters.onSelectTopics}";
+<#if attributes.onSelectTopics! != "">
+	options_${escapedOptionId}.onselecttopics = "${attributes.onSelectTopics}";
 </#if>
-<#if parameters.onFocusTopics??>
-	options_${escapedOptionId}.onfocustopics = "${parameters.onFocusTopics}";
+<#if attributes.onFocusTopics??>
+	options_${escapedOptionId}.onfocustopics = "${attributes.onFocusTopics}";
 </#if>
 
-  <#include "/${parameters.templateDir}/jquery/base.ftl" />
-  <#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-  <#include "/${parameters.templateDir}/jquery/topics.ftl" />
-  <#include "/${parameters.templateDir}/jquery/action.ftl" />
-  <#include "/${parameters.templateDir}/jquery/container.ftl" />
-  <#include "/${parameters.templateDir}/jquery/draggable.ftl" />
-  <#include "/${parameters.templateDir}/jquery/droppable.ftl" />
-  <#include "/${parameters.templateDir}/jquery/resizable.ftl" />
-  <#include "/${parameters.templateDir}/jquery/selectable.ftl" />
-  <#include "/${parameters.templateDir}/jquery/sortable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/base.ftl" />
+  <#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+  <#include "/${attributes.templateDir}/jquery/topics.ftl" />
+  <#include "/${attributes.templateDir}/jquery/action.ftl" />
+  <#include "/${attributes.templateDir}/jquery/container.ftl" />
+  <#include "/${attributes.templateDir}/jquery/draggable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/droppable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/resizable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/selectable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/sortable.ftl" />
 
-  <#include "/${parameters.templateDir}/jquery/jquery-bind.ftl" />
+  <#include "/${attributes.templateDir}/jquery/jquery-bind.ftl" />
  });
 </@s.script>

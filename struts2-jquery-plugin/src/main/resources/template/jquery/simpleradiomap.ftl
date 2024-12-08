@@ -20,46 +20,46 @@
  * under the License.
  */
 -->
-<#if parameters.list??>
-<@s.iterator value="parameters.list">
-    <#if parameters.listKey??>
-        <#assign itemKey = stack.findValue(parameters.listKey)/>
+<#if attributes.list??>
+<@s.iterator value="attributes.list">
+    <#if attributes.listKey??>
+        <#assign itemKey = stack.findValue(attributes.listKey)/>
     <#else>
         <#assign itemKey = stack.findValue('top')/>
     </#if>
     <#assign itemKeyStr = itemKey.toString() />
-    <#if parameters.listValue??>
-        <#assign itemValue = stack.findString(parameters.listValue)/>
+    <#if attributes.listValue??>
+        <#assign itemValue = stack.findString(attributes.listValue)/>
     <#else>
         <#assign itemValue = stack.findString('top')/>
     </#if>
 <input type="radio"<#rt/>
-<#if parameters.name??>
- name="${parameters.name}"<#rt/>
+<#if attributes.name??>
+ name="${attributes.name}"<#rt/>
 </#if>
- id="${parameters.id}${itemKeyStr}"<#rt/>
+ id="${attributes.id}${itemKeyStr}"<#rt/>
 <#if itemKey??>
  value="${itemKeyStr}"<#rt/>
 </#if>
-<#if parameters.disabled?default(false)>
+<#if attributes.disabled?default(false)>
  disabled="disabled"<#rt/>
 </#if>
-<#if parameters.tabindex??>
- tabindex="${parameters.tabindex}"<#rt/>
+<#if attributes.tabindex??>
+ tabindex="${attributes.tabindex}"<#rt/>
 </#if>
-<#if parameters.cssClass??>
- class="${parameters.cssClass}"<#rt/>
+<#if attributes.cssClass??>
+ class="${attributes.cssClass}"<#rt/>
 </#if>
-<#if parameters.cssStyle??>
- style="${parameters.cssStyle}"<#rt/>
+<#if attributes.cssStyle??>
+ style="${attributes.cssStyle}"<#rt/>
 </#if>
-<#if parameters.title??>
- title="${parameters.title}"<#rt/>
+<#if attributes.title??>
+ title="${attributes.title}"<#rt/>
 </#if>
-<#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-<#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+<#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
 /><#rt/>
-<label for="${parameters.id}${itemKeyStr}"><#rt/>
+<label for="${attributes.id}${itemKeyStr}"><#rt/>
     ${itemValue}<#t/>
 </label>
 </@s.iterator>

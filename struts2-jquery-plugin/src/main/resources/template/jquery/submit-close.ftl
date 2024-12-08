@@ -18,24 +18,24 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
-  <#include "/${parameters.templateDir}/${parameters.parentTheme}/submit-close.ftl" />
+<#assign escapedOptionId="${attributes.escapedId}">
+  <#include "/${attributes.templateDir}/${attributes.parentTheme}/submit-close.ftl" />
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_${escapedOptionId} = {};
-	<#if parameters.openDialog! != "">
-	options_${escapedOptionId}.opendialog = "${parameters.openDialog}";
+	<#if attributes.openDialog! != "">
+	options_${escapedOptionId}.opendialog = "${attributes.openDialog}";
 	</#if>
-	<#if parameters.openDialogTitle! != "">
-	options_${escapedOptionId}.opendialogtitle = "${parameters.openDialogTitle}";
+	<#if attributes.openDialogTitle! != "">
+	options_${escapedOptionId}.opendialogtitle = "${attributes.openDialogTitle}";
 	</#if>
-  <#include "/${parameters.templateDir}/jquery/base.ftl" />
-  <#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-  <#include "/${parameters.templateDir}/jquery/topics.ftl" />
-  <#include "/${parameters.templateDir}/jquery/action.ftl" />
-  <#include "/${parameters.templateDir}/jquery/button.ftl" />
-  <#include "/${parameters.templateDir}/jquery/validation.ftl" />
+  <#include "/${attributes.templateDir}/jquery/base.ftl" />
+  <#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+  <#include "/${attributes.templateDir}/jquery/topics.ftl" />
+  <#include "/${attributes.templateDir}/jquery/action.ftl" />
+  <#include "/${attributes.templateDir}/jquery/button.ftl" />
+  <#include "/${attributes.templateDir}/jquery/validation.ftl" />
 
-  <#include "/${parameters.templateDir}/jquery/jquery-bind.ftl" />
+  <#include "/${attributes.templateDir}/jquery/jquery-bind.ftl" />
  });
 </@s.script>

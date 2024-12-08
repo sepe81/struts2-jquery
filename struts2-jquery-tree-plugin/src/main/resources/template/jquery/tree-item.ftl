@@ -19,40 +19,40 @@
  */
 -->
 		<li
-<#if parameters.id?if_exists != "">
-			id="${parameters.id}"<#rt/>
+<#if attributes.id?if_exists != "">
+			id="${attributes.id}"<#rt/>
 </#if>
-<#if parameters.cssStyle?if_exists != "">
-			style="${parameters.cssStyle}"<#rt/>
+<#if attributes.cssStyle?if_exists != "">
+			style="${attributes.cssStyle}"<#rt/>
 </#if>
-<#if parameters.cssClass?if_exists != "">
- 			class="${parameters.cssClass}"<#rt/>
+<#if attributes.cssClass?if_exists != "">
+ 			class="${attributes.cssClass}"<#rt/>
 </#if>
-<#if parameters.type?if_exists != "">
-        data-jstree='{"type" : "${parameters.type}"}'<#rt/>
+<#if attributes.type?if_exists != "">
+        data-jstree='{"type" : "${attributes.type}"}'<#rt/>
 </#if>
-<#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-<#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-<#include "/${parameters.templateDir}/simple/dynamic-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+<#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/dynamic-attributes.ftl" />
 		>
-	<#if !parameters.targets?exists && parameters.href?if_exists != ""> 
-			<a href="${parameters.href?string}"
-            <#if parameters.id?if_exists != "">
-               id="${parameters.id}_link"<#rt/>
+	<#if !attributes.targets?exists && attributes.href?if_exists != "">
+			<a href="${attributes.href?string}"
+            <#if attributes.id?if_exists != "">
+               id="${attributes.id}_link"<#rt/>
             </#if>
             ><#rt/>
 	<#else>
 			<a href="javascript:void(0)"
-                <#if parameters.id?if_exists != "">
-               id="${parameters.id}_link"<#rt/>
+                <#if attributes.id?if_exists != "">
+               id="${attributes.id}_link"<#rt/>
                 </#if>
-                <#if parameters.targets?if_exists != "">
-               data-targets="${parameters.targets}"<#rt/>
+                <#if attributes.targets?if_exists != "">
+               data-targets="${attributes.targets}"<#rt/>
                 </#if>
             ><#rt/>
 	</#if>
-<#if parameters.title?if_exists != "">
-			${parameters.title}
+<#if attributes.title?if_exists != "">
+			${attributes.title}
 </#if>
 			</a>
 			<ul>

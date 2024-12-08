@@ -18,20 +18,20 @@
  * under the License.
  */
 -->
-<#if parameters.parentTheme == 'xhtml' || parameters.parentTheme == 'css_xhtml' || parameters.parentTheme == 'simple'>
-	<#if parameters.parentTheme == 'xhtml'>
-		<#include "/${parameters.templateDir}/xhtml/controlheader.ftl" />
+<#if attributes.parentTheme == 'xhtml' || attributes.parentTheme == 'css_xhtml' || attributes.parentTheme == 'simple'>
+	<#if attributes.parentTheme == 'xhtml'>
+		<#include "/${attributes.templateDir}/xhtml/controlheader.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'css_xhtml'>
-		<#include "/${parameters.templateDir}/css_xhtml/controlheader.ftl" />
+	<#if attributes.parentTheme == 'css_xhtml'>
+		<#include "/${attributes.templateDir}/css_xhtml/controlheader.ftl" />
 	</#if>
-	<#include "/${parameters.templateDir}/simple/text.ftl" />
-	<#if parameters.parentTheme == 'xhtml'>
-		<#include "/${parameters.templateDir}/xhtml/controlfooter.ftl" />
+	<#include "/${attributes.templateDir}/simple/text.ftl" />
+	<#if attributes.parentTheme == 'xhtml'>
+		<#include "/${attributes.templateDir}/xhtml/controlfooter.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'css_xhtml'>
-		<#include "/${parameters.templateDir}/css_xhtml/controlfooter.ftl" />
+	<#if attributes.parentTheme == 'css_xhtml'>
+		<#include "/${attributes.templateDir}/css_xhtml/controlfooter.ftl" />
 	</#if>
 <#else>
-	<#include "/${parameters.templateDir}/${parameters.parentTheme}/text.ftl" />
+	<#include "/${attributes.templateDir}/${attributes.parentTheme}/text.ftl" />
 </#if>

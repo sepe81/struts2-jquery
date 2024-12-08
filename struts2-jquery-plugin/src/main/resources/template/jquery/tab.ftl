@@ -18,43 +18,43 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_tab_${escapedOptionId} = {};
-  <#if parameters.id! != "">
-	options_tab_${escapedOptionId}.id = "${parameters.id}";
+  <#if attributes.id! != "">
+	options_tab_${escapedOptionId}.id = "${attributes.id}";
   </#if>
-  <#if parameters.cssStyle! != "">
-	options_tab_${escapedOptionId}.cssstyle = "${parameters.cssStyle}";
+  <#if attributes.cssStyle! != "">
+	options_tab_${escapedOptionId}.cssstyle = "${attributes.cssStyle}";
   </#if>
-  <#if parameters.cssClass! != "">
-	options_tab_${escapedOptionId}.cssclass = "${parameters.cssClass}";
+  <#if attributes.cssClass! != "">
+	options_tab_${escapedOptionId}.cssclass = "${attributes.cssClass}";
   </#if>
-  <#if parameters.formIds! != "">
-	options_tab_${escapedOptionId}.formIds = "${parameters.formIds}";
+  <#if attributes.formIds! != "">
+	options_tab_${escapedOptionId}.formIds = "${attributes.formIds}";
   </#if>
-  <#if parameters.href! != "">
-	options_tab_${escapedOptionId}.href = "<#outputformat "JavaScript">${parameters.href}</#outputformat>";
-  <#elseif parameters.target! != "" >
-	options_tab_${escapedOptionId}.href = "#${parameters.target}";
+  <#if attributes.href! != "">
+	options_tab_${escapedOptionId}.href = "<#outputformat "JavaScript">${attributes.href}</#outputformat>";
+  <#elseif attributes.target! != "" >
+	options_tab_${escapedOptionId}.href = "#${attributes.target}";
   <#else>
 	options_tab_${escapedOptionId}.href = "#";
   </#if>
-  <#if parameters.label! != "">
-	options_tab_${escapedOptionId}.label = "${parameters.label}";
+  <#if attributes.label! != "">
+	options_tab_${escapedOptionId}.label = "${attributes.label}";
   </#if>
-  <#if parameters.closable??>
-	options_tab_${escapedOptionId}.closable = ${parameters.closable?string};
+  <#if attributes.closable??>
+	options_tab_${escapedOptionId}.closable = ${attributes.closable?string};
   </#if>
-  <#if parameters.parentTabbedPanel! != "">
-  	<#assign escapedParentOptionId="${parameters.parentTabbedPanel?string?replace('.', '_')}">
-  	var tabs = jQuery('#${parameters.parentTabbedPanel?string?replace('.', '\\\\\\\\.')}').data('taboptions');
+  <#if attributes.parentTabbedPanel! != "">
+  	<#assign escapedParentOptionId="${attributes.parentTabbedPanel?string?replace('.', '_')}">
+  	var tabs = jQuery('#${attributes.parentTabbedPanel?string?replace('.', '\\\\\\\\.')}').data('taboptions');
   	if(!tabs) {
   		tabs = [];
   	}
   	tabs.push(options_tab_${escapedOptionId});
-  	jQuery('#${parameters.parentTabbedPanel?string?replace('.', '\\\\\\\\.')}').data('taboptions', tabs);
+  	jQuery('#${attributes.parentTabbedPanel?string?replace('.', '\\\\\\\\.')}').data('taboptions', tabs);
   </#if>
  });
 </@s.script>

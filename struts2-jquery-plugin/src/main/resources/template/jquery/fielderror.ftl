@@ -33,24 +33,24 @@
                     <#if (haveMatchedErrorField && (!doneStartUlTag))><#t/>
                         <#assign doneStartUlTag=true><#t/>
                     </#if><#t/>
-					<div 
-					<#if parameters.id?if_exists != "">
-					 id="${parameters.id}"<#rt/>
+					<div
+					<#if attributes.id?if_exists != "">
+					 id="${attributes.id}"<#rt/>
 					</#if>
-					<#if parameters.cssClass??>
-					 class="ui-widget ${parameters.cssClass}"<#rt/>
+					<#if attributes.cssClass??>
+					 class="ui-widget ${attributes.cssClass}"<#rt/>
 					<#else>
 					 class="ui-widget actionError"<#rt/>
 					</#if>
-					<#if parameters.cssStyle??>
-					 style="margin${parameters.cssStyle}"<#rt/>
+					<#if attributes.cssStyle??>
+					 style="margin${attributes.cssStyle}"<#rt/>
 					</#if>
 					>
-					<div class="ui-state-error ui-corner-all" style="padding: 0.3em 0.7em; margin-top: 20px;"> 
+					<div class="ui-state-error ui-corner-all" style="padding: 0.3em 0.7em; margin-top: 20px;">
 		                    <#list eValue as eEachValue><#t/>
 					            <#if eEachValue?if_exists != "">
 							<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: 0.3em;"></span>
-							<span><#if parameters.escape>${eEachValue!}<#else>${eEachValue!}</#if></span></p>
+							<span><#if attributes.escape>${eEachValue!}<#else>${eEachValue!}</#if></span></p>
 					            </#if>
 							</#list>
 					</div>
@@ -63,26 +63,26 @@
         </#if><#t/>
         <#else><#t/>
         <#if (eKeysSize > 0)><#t/>
-					<div 
-					<#if parameters.id?if_exists != "">
-					 id="${parameters.id}"<#rt/>
+					<div
+					<#if attributes.id?if_exists != "">
+					 id="${attributes.id}"<#rt/>
 					</#if>
-					<#if parameters.cssClass??>
-					 class="ui-widget ${parameters.cssClass}"<#rt/>
+					<#if attributes.cssClass??>
+					 class="ui-widget ${attributes.cssClass}"<#rt/>
 					<#else>
 					 class="ui-widget actionError"<#rt/>
 					</#if>
-					<#if parameters.cssStyle??>
-					 style="margin${parameters.cssStyle}"<#rt/>
+					<#if attributes.cssStyle??>
+					 style="margin${attributes.cssStyle}"<#rt/>
 					</#if>
 					>
-					<div class="ui-state-error ui-corner-all" style="padding: 0.3em 0.7em; margin-top: 20px;"> 
+					<div class="ui-state-error ui-corner-all" style="padding: 0.3em 0.7em; margin-top: 20px;">
             <#list eKeys as eKey><#t/>
                 <#assign eValue = fieldErrors[eKey]><#t/>
 		                    <#list eValue as eEachValue><#t/>
 					            <#if eEachValue?if_exists != "">
 							<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: 0.3em;"></span>
-							<span><#if parameters.escape>${eEachValue!}<#else>${eEachValue!}</#if></span></p>
+							<span><#if attributes.escape>${eEachValue!}<#else>${eEachValue!}</#if></span></p>
 					            </#if>
 							</#list>
             </#list><#t/>

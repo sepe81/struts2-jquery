@@ -19,12 +19,12 @@
  */
 -->
 <div<#rt/>
-<#if parameters.id??> id="${parameters.id}"<#rt/></#if>
-<#if parameters.name??> name="${parameters.name}"<#rt/></#if>
-<#if parameters.cssClass??> class="${parameters.cssClass}"<#rt/></#if>
-<#if parameters.cssStyle??> style="${parameters.cssStyle}"<#rt/></#if>
-<#if parameters.title??> title="${parameters.title}"<#rt/></#if>
-<#include "/${parameters.templateDir}/${parameters.expandTheme}/scripting-events.ftl" />
-<#include "/${parameters.templateDir}/${parameters.expandTheme}/common-attributes.ftl" />
-<#include "/${parameters.templateDir}/${parameters.expandTheme}/dynamic-attributes.ftl" />
+<#if attributes.id??> id="${attributes.id}"<#rt/></#if>
+<#if attributes.name??> name="${attributes.name}"<#rt/></#if>
+<#if attributes.cssClass??> class="${attributes.cssClass}"<#rt/></#if>
+<#if attributes.cssStyle??> style="${attributes.cssStyle}"<#rt/></#if>
+<#if attributes.title??> title="${attributes.title}"<#rt/></#if>
+<#include "/${attributes.templateDir}/${attributes.expandTheme}/scripting-events.ftl" />
+<#include "/${attributes.templateDir}/${attributes.expandTheme}/common-attributes.ftl" />
+<#include "/${attributes.templateDir}/${attributes.expandTheme}/dynamic-attributes.ftl" />
 >

@@ -18,42 +18,42 @@
  * under the License.
  */
 -->
-<#if parameters.parentTheme?if_exists == 'xhtml' || parameters.parentTheme?if_exists == 'css_xhtml'>
-	<#if parameters.parentTheme == 'xhtml'>
-		<#include "/${parameters.templateDir}/xhtml/controlheader.ftl" />
+<#if attributes.parentTheme?if_exists == 'xhtml' || attributes.parentTheme?if_exists == 'css_xhtml'>
+	<#if attributes.parentTheme == 'xhtml'>
+		<#include "/${attributes.templateDir}/xhtml/controlheader.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'css_xhtml'>
-		<#include "/${parameters.templateDir}/css_xhtml/controlheader.ftl" />
+	<#if attributes.parentTheme == 'css_xhtml'>
+		<#include "/${attributes.templateDir}/css_xhtml/controlheader.ftl" />
 	</#if>
 </#if>
 <input type="hidden"
-  <#if parameters.widgetid?if_exists != "">
-    id="${parameters.widgetid}"<#rt/>
+  <#if attributes.widgetid?if_exists != "">
+    id="${attributes.widgetid}"<#rt/>
   </#if>
-    value="${parameters.nameValue?default('0')}"<#rt/>
-  <#if parameters.name?if_exists != "">
-    name="${parameters.name}"<#rt/>
+    value="${attributes.nameValue?default('0')}"<#rt/>
+  <#if attributes.name?if_exists != "">
+    name="${attributes.name}"<#rt/>
   </#if>
-  <#if parameters.disabled?default(false)>
+  <#if attributes.disabled?default(false)>
     disabled="disabled"<#rt/>
   </#if>
 />
-<div id="${parameters.id}"
-<#if parameters.cssStyle?if_exists != "">
- style="${parameters.cssStyle}"<#rt/>
+<div id="${attributes.id}"
+<#if attributes.cssStyle?if_exists != "">
+ style="${attributes.cssStyle}"<#rt/>
 </#if>
-<#if parameters.cssClass?if_exists != "">
- class="${parameters.cssClass}"<#rt/>
+<#if attributes.cssClass?if_exists != "">
+ class="${attributes.cssClass}"<#rt/>
 </#if>
-<#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-<#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-<#include "/${parameters.templateDir}/simple/dynamic-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+<#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/dynamic-attributes.ftl" />
 >
-<#if parameters.parentTheme?if_exists == 'xhtml' || parameters.parentTheme?if_exists == 'css_xhtml'>
-	<#if parameters.parentTheme == 'xhtml'>
-		<#include "/${parameters.templateDir}/xhtml/controlfooter.ftl" />
+<#if attributes.parentTheme?if_exists == 'xhtml' || attributes.parentTheme?if_exists == 'css_xhtml'>
+	<#if attributes.parentTheme == 'xhtml'>
+		<#include "/${attributes.templateDir}/xhtml/controlfooter.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'css_xhtml'>
-		<#include "/${parameters.templateDir}/css_xhtml/controlfooter.ftl" />
+	<#if attributes.parentTheme == 'css_xhtml'>
+		<#include "/${attributes.templateDir}/css_xhtml/controlfooter.ftl" />
 	</#if>
 </#if>

@@ -19,28 +19,28 @@
  */
 -->
 <a<#rt/>
-<#if parameters.id?if_exists != "">
- id="${parameters.id}"<#rt/>
+<#if attributes.id?if_exists != "">
+ id="${attributes.id}"<#rt/>
 </#if>
-<#if parameters.href?if_exists != "">
+<#if attributes.href?if_exists != "">
  href="javascript:void(0)"<#rt/>
 </#if>
-<#if parameters.tabindex??>
- tabindex="${parameters.tabindex}"<#rt/>
+<#if attributes.tabindex??>
+ tabindex="${attributes.tabindex}"<#rt/>
 </#if>
-<#if parameters.cssClass??>
- class="${parameters.cssClass}"<#rt/>
+<#if attributes.cssClass??>
+ class="${attributes.cssClass}"<#rt/>
 </#if>
-<#if parameters.cssStyle??>
- style="${parameters.cssStyle}"<#rt/>
+<#if attributes.cssStyle??>
+ style="${attributes.cssStyle}"<#rt/>
 </#if>
-<#if parameters.title??>
- title="${parameters.title}"<#rt/>
+<#if attributes.title??>
+ title="${attributes.title}"<#rt/>
 </#if>
-<#if parameters.disabled?default(false)>
+<#if attributes.disabled?default(false)>
  disabled="disabled"<#rt/>
 </#if>
-<#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-<#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-<#include "/${parameters.templateDir}/simple/dynamic-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+<#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/dynamic-attributes.ftl" />
 >

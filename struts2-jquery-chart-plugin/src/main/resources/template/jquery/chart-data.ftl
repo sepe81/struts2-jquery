@@ -18,76 +18,76 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.chart?string?replace('.', '_')}">
+<#assign escapedOptionId="${attributes.chart?string?replace('.', '_')}">
 
 options_${escapedOptionId}_data = {};
-options_${escapedOptionId}_data.id = "${parameters.id}";
-<#if parameters.hrefUrl?if_exists != "">
-options_${escapedOptionId}_data.href = "${parameters.hrefUrl}";
+options_${escapedOptionId}_data.id = "${attributes.id}";
+<#if attributes.hrefUrl?if_exists != "">
+options_${escapedOptionId}_data.href = "${attributes.hrefUrl}";
 </#if>
-<#if parameters.hrefParameter?if_exists != "">
-options_${escapedOptionId}_data.hrefparameter = "${parameters.hrefParameter?string}";
+<#if attributes.hrefParameter?if_exists != "">
+options_${escapedOptionId}_data.hrefparameter = "${attributes.hrefParameter?string}";
 </#if>
-<#if parameters.formIds?exists>
-options_${escapedOptionId}_data.formids = "${parameters.formIds}";
+<#if attributes.formIds?exists>
+options_${escapedOptionId}_data.formids = "${attributes.formIds}";
 </#if>
-<#if parameters.indicator?exists>
-options_${escapedOptionId}_data.indicatorid = "${parameters.indicator}";
+<#if attributes.indicator?exists>
+options_${escapedOptionId}_data.indicatorid = "${attributes.indicator}";
 </#if>
-<#if parameters.loadingText?exists>
-options_${escapedOptionId}_data.loadingtext = "${parameters.loadingText}";
+<#if attributes.loadingText?exists>
+options_${escapedOptionId}_data.loadingtext = "${attributes.loadingText}";
 </#if>
-<#if parameters.remoteList??>
-options_${escapedOptionId}_data.list = "${parameters.remoteList}";
+<#if attributes.remoteList??>
+options_${escapedOptionId}_data.list = "${attributes.remoteList}";
 </#if>
-<#if parameters.remoteListKey??>
-options_${escapedOptionId}_data.listkey = "${parameters.remoteListKey}";
+<#if attributes.remoteListKey??>
+options_${escapedOptionId}_data.listkey = "${attributes.remoteListKey}";
 </#if>
-<#if parameters.remoteListValue??>
-options_${escapedOptionId}_data.listvalue = "${parameters.remoteListValue}";
+<#if attributes.remoteListValue??>
+options_${escapedOptionId}_data.listvalue = "${attributes.remoteListValue}";
 </#if>
-<#if parameters.label?if_exists != "">
-options_${escapedOptionId}_data.label = "${parameters.label}";
+<#if attributes.label?if_exists != "">
+options_${escapedOptionId}_data.label = "${attributes.label}";
 </#if>
-<#if parameters.data?if_exists != "">
-options_${escapedOptionId}_data.data = <#outputformat "JavaScript">${parameters.data}</#outputformat>;;
+<#if attributes.data?if_exists != "">
+options_${escapedOptionId}_data.data = <#outputformat "JavaScript">${attributes.data}</#outputformat>;;
 </#if>
-<#if parameters.color?if_exists != "">
-options_${escapedOptionId}_data.color = "${parameters.color}";
+<#if attributes.color?if_exists != "">
+options_${escapedOptionId}_data.color = "${attributes.color}";
 </#if>
-<#if parameters.lines?if_exists != "">
-options_${escapedOptionId}_data.lines = <#outputformat "JavaScript">${parameters.lines}</#outputformat>;;
+<#if attributes.lines?if_exists != "">
+options_${escapedOptionId}_data.lines = <#outputformat "JavaScript">${attributes.lines}</#outputformat>;;
 </#if>
-<#if parameters.bars?if_exists != "">
-options_${escapedOptionId}_data.bars = <#outputformat "JavaScript">${parameters.bars}</#outputformat>;;
+<#if attributes.bars?if_exists != "">
+options_${escapedOptionId}_data.bars = <#outputformat "JavaScript">${attributes.bars}</#outputformat>;;
 </#if>
-<#if parameters.points?if_exists != "">
-options_${escapedOptionId}_data.points = <#outputformat "JavaScript">${parameters.points}</#outputformat>;;
+<#if attributes.points?if_exists != "">
+options_${escapedOptionId}_data.points = <#outputformat "JavaScript">${attributes.points}</#outputformat>;;
 </#if>
-<#if parameters.xaxis??>
-options_${escapedOptionId}_data.xaxis = <#outputformat "JavaScript">${parameters.xaxis}</#outputformat>;;
+<#if attributes.xaxis??>
+options_${escapedOptionId}_data.xaxis = <#outputformat "JavaScript">${attributes.xaxis}</#outputformat>;;
 </#if>
-<#if parameters.yaxis??>
-options_${escapedOptionId}_data.yaxis = <#outputformat "JavaScript">${parameters.yaxis}</#outputformat>;;
+<#if attributes.yaxis??>
+options_${escapedOptionId}_data.yaxis = <#outputformat "JavaScript">${attributes.yaxis}</#outputformat>;;
 </#if>
-<#if parameters.clickable?default(false)>
+<#if attributes.clickable?default(false)>
 options_${escapedOptionId}_data.clickable = true;
 </#if>
-<#if parameters.hoverable?default(false)>
+<#if attributes.hoverable?default(false)>
 options_${escapedOptionId}_data.hoverable = true;
 </#if>
-<#if parameters.shadowSize?if_exists != "">
-options_${escapedOptionId}_data.shadowSize = <#outputformat "JavaScript">${parameters.shadowSize}</#outputformat>;;
+<#if attributes.shadowSize?if_exists != "">
+options_${escapedOptionId}_data.shadowSize = <#outputformat "JavaScript">${attributes.shadowSize}</#outputformat>;;
 </#if>
-<#if parameters.fillBetween?if_exists != "">
-options_${escapedOptionId}_data.fillBetween = "${parameters.fillBetween}";
+<#if attributes.fillBetween?if_exists != "">
+options_${escapedOptionId}_data.fillBetween = "${attributes.fillBetween}";
 options_${escapedOptionId}.fill = true;
 </#if>
-<#if parameters.stack?if_exists != "">
-options_${escapedOptionId}_data.stack = "${parameters.stack}";
+<#if attributes.stack?if_exists != "">
+options_${escapedOptionId}_data.stack = "${attributes.stack}";
 options_${escapedOptionId}.stack = true;
 </#if>
-<#if parameters.curvedLines?default(false)>
+<#if attributes.curvedLines?default(false)>
 options_${escapedOptionId}_data.curvedLines = { show : true };
 if(options_${escapedOptionId}.series){
 options_${escapedOptionId}.series = $.extend(options_${escapedOptionId}.series , { curvedLines: { active : true }});
@@ -95,42 +95,42 @@ options_${escapedOptionId}.series = $.extend(options_${escapedOptionId}.series ,
 options_${escapedOptionId}.series = { curvedLines: { active: true }};
 }
     options_${escapedOptionId}_data.curvedLines.apply = true;
-	<#if parameters.curvedLinesFit?default(false)>
+	<#if attributes.curvedLinesFit?default(false)>
 	options_${escapedOptionId}_data.curvedLines.fit = true;
 	</#if>
-	<#if parameters.curvedLinesFill?default(false)>
+	<#if attributes.curvedLinesFill?default(false)>
 	options_${escapedOptionId}_data.curvedLines.fill = true;
 	</#if>
-	<#if parameters.curvedLinesFillColor?if_exists != "">
-	options_${escapedOptionId}_data.curvedLines.fillColor = "${parameters.curvedLinesFillColor}";
+	<#if attributes.curvedLinesFillColor?if_exists != "">
+	options_${escapedOptionId}_data.curvedLines.fillColor = "${attributes.curvedLinesFillColor}";
 	</#if>
-	<#if parameters.curvedLinesLineWidth??>
-	options_${escapedOptionId}_data.curvedLines.lineWidth = ${parameters.curvedLinesLineWidth};
+	<#if attributes.curvedLinesLineWidth??>
+	options_${escapedOptionId}_data.curvedLines.lineWidth = ${attributes.curvedLinesLineWidth};
 	</#if>
 </#if>
-<#if parameters.reloadTopics?exists>
-options_${escapedOptionId}_data.reloadtopics = "${parameters.reloadTopics}";
+<#if attributes.reloadTopics?exists>
+options_${escapedOptionId}_data.reloadtopics = "${attributes.reloadTopics}";
 </#if>
-<#if parameters.listenTopics?exists>
-options_${escapedOptionId}_data.listentopics = "${parameters.listenTopics}";
+<#if attributes.listenTopics?exists>
+options_${escapedOptionId}_data.listentopics = "${attributes.listenTopics}";
 </#if>
-<#if parameters.deferredLoading?default(false)>
+<#if attributes.deferredLoading?default(false)>
 options_${escapedOptionId}_data.deferredloading = true;
 </#if>
-<#if parameters.onCompleteTopics?exists>
-options_${escapedOptionId}_data.oncom = "${parameters.onCompleteTopics}";
+<#if attributes.onCompleteTopics?exists>
+options_${escapedOptionId}_data.oncom = "${attributes.onCompleteTopics}";
 </#if>
-<#if parameters.onSuccessTopics?exists>
-options_${escapedOptionId}_data.onsuc = "${parameters.onSuccessTopics}";
+<#if attributes.onSuccessTopics?exists>
+options_${escapedOptionId}_data.onsuc = "${attributes.onSuccessTopics}";
 </#if>
-<#if parameters.onErrorTopics?exists>
-options_${escapedOptionId}_data.onerr = "${parameters.onErrorTopics}";
+<#if attributes.onErrorTopics?exists>
+options_${escapedOptionId}_data.onerr = "${attributes.onErrorTopics}";
 </#if>
-<#if parameters.onBeforeTopics?exists>
-options_${escapedOptionId}_data.onbef = "${parameters.onBeforeTopics}";
+<#if attributes.onBeforeTopics?exists>
+options_${escapedOptionId}_data.onbef = "${attributes.onBeforeTopics}";
 </#if>
-<#if parameters.onAlwaysTopics?exists>
-options_${escapedOptionId}_data.onalw = "${parameters.onAlwaysTopics}";
+<#if attributes.onAlwaysTopics?exists>
+options_${escapedOptionId}_data.onalw = "${attributes.onAlwaysTopics}";
 </#if>
 
 options_${escapedOptionId}.data.push(options_${escapedOptionId}_data);

@@ -18,50 +18,50 @@
  * under the License.
  */
 -->
-<#if parameters.parentTheme == 'xhtml' || parameters.parentTheme == 'css_xhtml' || parameters.parentTheme == 'simple'>
-	<#if parameters.parentTheme == 'xhtml'>
-		<#include "/${parameters.templateDir}/xhtml/controlheader.ftl" />
+<#if attributes.parentTheme == 'xhtml' || attributes.parentTheme == 'css_xhtml' || attributes.parentTheme == 'simple'>
+	<#if attributes.parentTheme == 'xhtml'>
+		<#include "/${attributes.templateDir}/xhtml/controlheader.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'css_xhtml'>
-		<#include "/${parameters.templateDir}/css_xhtml/controlheader.ftl" />
+	<#if attributes.parentTheme == 'css_xhtml'>
+		<#include "/${attributes.templateDir}/css_xhtml/controlheader.ftl" />
 	</#if>
 <#setting number_format="#.#####">
 <select<#rt/>
- name="${parameters.name?default("")}"<#rt/>
-<#if parameters.get("size")??>
- size="${parameters.get("size")}"<#rt/>
+ name="${attributes.name?default("")}"<#rt/>
+<#if attributes.get("size")??>
+ size="${attributes.get("size")}"<#rt/>
 </#if>
-<#if parameters.multiple?default(false)>
+<#if attributes.multiple?default(false)>
  multiple="multiple"<#rt/>
 </#if>
-<#if parameters.disabled?default(false)>
+<#if attributes.disabled?default(false)>
  disabled="disabled"<#rt/>
 </#if>
-<#if parameters.tabindex??>
- tabindex="${parameters.tabindex}"<#rt/>
+<#if attributes.tabindex??>
+ tabindex="${attributes.tabindex}"<#rt/>
 </#if>
-<#if parameters.id??>
- id="${parameters.id}"<#rt/>
+<#if attributes.id??>
+ id="${attributes.id}"<#rt/>
 </#if>
-<#include "/${parameters.templateDir}/simple/css.ftl" />
-<#if parameters.title??>
- title="${parameters.title}"<#rt/>
+<#include "/${attributes.templateDir}/simple/css.ftl" />
+<#if attributes.title??>
+ title="${attributes.title}"<#rt/>
 </#if>
-<#if parameters.multiple?default(false)>
+<#if attributes.multiple?default(false)>
  multiple="multiple"<#rt/>
 </#if>
-<#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-<#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-<#include "/${parameters.templateDir}/simple/dynamic-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+<#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
+<#include "/${attributes.templateDir}/simple/dynamic-attributes.ftl" />
 >
 <option value=""></option>
 </select>
-	<#if parameters.parentTheme == 'xhtml'>
-		<#include "/${parameters.templateDir}/xhtml/controlfooter.ftl" />
+	<#if attributes.parentTheme == 'xhtml'>
+		<#include "/${attributes.templateDir}/xhtml/controlfooter.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'css_xhtml'>
-		<#include "/${parameters.templateDir}/css_xhtml/controlfooter.ftl" />
+	<#if attributes.parentTheme == 'css_xhtml'>
+		<#include "/${attributes.templateDir}/css_xhtml/controlfooter.ftl" />
 	</#if>
 <#else>
-	<#include "/${parameters.templateDir}/${parameters.parentTheme}/select.ftl" />
+	<#include "/${attributes.templateDir}/${attributes.parentTheme}/select.ftl" />
 </#if>

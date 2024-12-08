@@ -175,7 +175,7 @@ public class Accordion extends AbstractTopicsBean {
         Object value = null;
 
         if (list == null) {
-            list = parameters.get(PARAM_LIST);
+            list = getAttributes().get(PARAM_LIST);
         }
 
         if (list instanceof String) {

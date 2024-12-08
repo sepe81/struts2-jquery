@@ -18,28 +18,28 @@
  * under the License.
  */
 -->
-<#assign escapedOptionId="${parameters.escapedId}">
+<#assign escapedOptionId="${attributes.escapedId}">
 </div>
 <@s.script type='text/javascript'>
 jQuery(document).ready(function () {
 	var options_${escapedOptionId} = {};
-  <#if parameters.updateFreq??>
-	options_${escapedOptionId}.updatefreq = ${parameters.updateFreq?c};
+  <#if attributes.updateFreq??>
+	options_${escapedOptionId}.updatefreq = ${attributes.updateFreq?c};
   </#if>
-  <#if parameters.delay??>
-	options_${escapedOptionId}.delay = ${parameters.delay?c};
+  <#if attributes.delay??>
+	options_${escapedOptionId}.delay = ${attributes.delay?c};
   </#if>
-  <#include "/${parameters.templateDir}/jquery/base.ftl" />
-  <#include "/${parameters.templateDir}/jquery/interactive.ftl" />
-  <#include "/${parameters.templateDir}/jquery/topics.ftl" />
-  <#include "/${parameters.templateDir}/jquery/action.ftl" />
-  <#include "/${parameters.templateDir}/jquery/container.ftl" />
-  <#include "/${parameters.templateDir}/jquery/draggable.ftl" />
-  <#include "/${parameters.templateDir}/jquery/droppable.ftl" />
-  <#include "/${parameters.templateDir}/jquery/resizable.ftl" />
-  <#include "/${parameters.templateDir}/jquery/selectable.ftl" />
-  <#include "/${parameters.templateDir}/jquery/sortable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/base.ftl" />
+  <#include "/${attributes.templateDir}/jquery/interactive.ftl" />
+  <#include "/${attributes.templateDir}/jquery/topics.ftl" />
+  <#include "/${attributes.templateDir}/jquery/action.ftl" />
+  <#include "/${attributes.templateDir}/jquery/container.ftl" />
+  <#include "/${attributes.templateDir}/jquery/draggable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/droppable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/resizable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/selectable.ftl" />
+  <#include "/${attributes.templateDir}/jquery/sortable.ftl" />
 
-  <#include "/${parameters.templateDir}/jquery/jquery-bind.ftl" />
+  <#include "/${attributes.templateDir}/jquery/jquery-bind.ftl" />
  });
 </@s.script>

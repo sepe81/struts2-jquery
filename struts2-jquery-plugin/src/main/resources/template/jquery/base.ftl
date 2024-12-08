@@ -18,13 +18,13 @@
  * under the License.
  */
 -->
-  <#assign escapedOptionId="${parameters.escapedId}">
-  <#if parameters.jqueryaction??>
-	options_${escapedOptionId}.jqueryaction = "${parameters.jqueryaction}";
+  <#assign escapedOptionId="${attributes.escapedId}">
+  <#if attributes.jqueryaction??>
+	options_${escapedOptionId}.jqueryaction = "${attributes.jqueryaction}";
   </#if>
-  <#if parameters.id??>
-	options_${escapedOptionId}.id = "${parameters.id}";
+  <#if attributes.id??>
+	options_${escapedOptionId}.id = "${attributes.id}";
   </#if>
-  <#if parameters.name??>
-	options_${escapedOptionId}.name = "${parameters.name}";
+  <#if attributes.name??>
+	options_${escapedOptionId}.name = "${attributes.name}";
   </#if>

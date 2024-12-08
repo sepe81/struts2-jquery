@@ -18,52 +18,52 @@
  * under the License.
  */
 -->
-<#if parameters.parentTheme?if_exists == 'xhtml' || parameters.parentTheme?if_exists == 'css_xhtml' || parameters.parentTheme?if_exists == 'simple'>
-	<#if parameters.parentTheme == 'xhtml'>
-		<#include "/${parameters.templateDir}/xhtml/controlheader.ftl" />
+<#if attributes.parentTheme?if_exists == 'xhtml' || attributes.parentTheme?if_exists == 'css_xhtml' || attributes.parentTheme?if_exists == 'simple'>
+	<#if attributes.parentTheme == 'xhtml'>
+		<#include "/${attributes.templateDir}/xhtml/controlheader.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'css_xhtml'>
-		<#include "/${parameters.templateDir}/css_xhtml/controlheader.ftl" />
+	<#if attributes.parentTheme == 'css_xhtml'>
+		<#include "/${attributes.templateDir}/css_xhtml/controlheader.ftl" />
 	</#if>
-	<#if parameters.inline?default(false)>
-		<#include "/${parameters.templateDir}/simple/hidden.ftl" />
-		<div id="${parameters.id}_inline"
-		<#if parameters.cssStyle?if_exists != "">
-		 style="${parameters.cssStyle}"<#rt/>
+	<#if attributes.inline?default(false)>
+		<#include "/${attributes.templateDir}/simple/hidden.ftl" />
+		<div id="${attributes.id}_inline"
+		<#if attributes.cssStyle?if_exists != "">
+		 style="${attributes.cssStyle}"<#rt/>
 		</#if>
-		<#if parameters.cssClass?if_exists != "">
-		 class="${parameters.cssClass}"<#rt/>
+		<#if attributes.cssClass?if_exists != "">
+		 class="${attributes.cssClass}"<#rt/>
 		</#if>
-		<#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-		<#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-		<#include "/${parameters.templateDir}/simple/dynamic-attributes.ftl" />
+		<#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+		<#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
+		<#include "/${attributes.templateDir}/simple/dynamic-attributes.ftl" />
 		>
 		</div>
 	<#else>
-		<#include "/${parameters.templateDir}/simple/text.ftl" />
+		<#include "/${attributes.templateDir}/simple/text.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'xhtml'>
-		<#include "/${parameters.templateDir}/xhtml/controlfooter.ftl" />
+	<#if attributes.parentTheme == 'xhtml'>
+		<#include "/${attributes.templateDir}/xhtml/controlfooter.ftl" />
 	</#if>
-	<#if parameters.parentTheme == 'css_xhtml'>
-		<#include "/${parameters.templateDir}/css_xhtml/controlfooter.ftl" />
+	<#if attributes.parentTheme == 'css_xhtml'>
+		<#include "/${attributes.templateDir}/css_xhtml/controlfooter.ftl" />
 	</#if>
 <#else>
-	<#if parameters.inline?default(false)>
-		<#include "/${parameters.templateDir}/simple/hidden.ftl" />
-		<div id="${parameters.id}_inline"
-		<#if parameters.cssStyle?if_exists != "">
-		 style="${parameters.cssStyle}"<#rt/>
+	<#if attributes.inline?default(false)>
+		<#include "/${attributes.templateDir}/simple/hidden.ftl" />
+		<div id="${attributes.id}_inline"
+		<#if attributes.cssStyle?if_exists != "">
+		 style="${attributes.cssStyle}"<#rt/>
 		</#if>
-		<#if parameters.cssClass?if_exists != "">
-		 class="${parameters.cssClass}"<#rt/>
+		<#if attributes.cssClass?if_exists != "">
+		 class="${attributes.cssClass}"<#rt/>
 		</#if>
-		<#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-		<#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-		<#include "/${parameters.templateDir}/simple/dynamic-attributes.ftl" />
+		<#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+		<#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
+		<#include "/${attributes.templateDir}/simple/dynamic-attributes.ftl" />
 		>
 		</div>
 	<#else>
-		<#include "/${parameters.templateDir}/${parameters.parentTheme}/text.ftl" />
+		<#include "/${attributes.templateDir}/${attributes.parentTheme}/text.ftl" />
 	</#if>
 </#if>

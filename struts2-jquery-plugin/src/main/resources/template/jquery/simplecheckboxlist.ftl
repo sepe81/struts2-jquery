@@ -21,31 +21,31 @@
  */
 -->
 <#assign itemCount = 0/>
-<#if parameters.list??>
-    <@s.iterator value="parameters.list">
+<#if attributes.list??>
+    <@s.iterator value="attributes.list">
         <#assign itemCount = itemCount + 1/>
-        <#if parameters.listKey??>
-            <#assign itemKey = stack.findValue(parameters.listKey)/>
+        <#if attributes.listKey??>
+            <#assign itemKey = stack.findValue(attributes.listKey)/>
         <#else>
             <#assign itemKey = stack.findValue('top')/>
         </#if>
-        <#if parameters.listValue??>
-            <#assign itemValue = stack.findString(parameters.listValue)?default("")/>
+        <#if attributes.listValue??>
+            <#assign itemValue = stack.findString(attributes.listValue)?default("")/>
         <#else>
             <#assign itemValue = stack.findString('top')/>
         </#if>
 <#assign itemKeyStr=itemKey.toString() />
-<input type="checkbox" name="${parameters.name}" value="${itemKeyStr}" id="${parameters.name}-${itemCount}"<#rt/>
-        <#if parameters.disabled?default(false)>
+<input type="checkbox" name="${attributes.name}" value="${itemKeyStr}" id="${attributes.name}-${itemCount}"<#rt/>
+        <#if attributes.disabled?default(false)>
  disabled="disabled"<#rt/>
         </#if>
-        <#if parameters.title??>
- title="${parameters.title}"<#rt/>
+        <#if attributes.title??>
+ title="${attributes.title}"<#rt/>
         </#if>
-        <#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-        <#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
+        <#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+        <#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
 />
-<label for="${parameters.name}-${itemCount}" class="checkboxLabel">${itemValue}</label>
+<label for="${attributes.name}-${itemCount}" class="checkboxLabel">${itemValue}</label>
     </@s.iterator>
 <#else>
   &nbsp;

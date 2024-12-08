@@ -18,25 +18,25 @@
  * under the License.
  */
 -->
-	<${parameters.header?default('h3')}
-    <#if parameters.tabindex??>
-        tabindex="${parameters.tabindex}"<#rt/>
+	<${attributes.header?default('h3')}
+    <#if attributes.tabindex??>
+        tabindex="${attributes.tabindex}"<#rt/>
     </#if>
-    <#if parameters.disabled?default(false)>
+    <#if attributes.disabled?default(false)>
         disabled="disabled"<#rt/>
     </#if>
-    <#if parameters.id?if_exists != "">
-        id="${parameters.id}"<#rt/>
+    <#if attributes.id?if_exists != "">
+        id="${attributes.id}"<#rt/>
     </#if>
-    <#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-    <#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-    <#include "/${parameters.templateDir}/simple/dynamic-attributes.ftl" />
+    <#include "/${attributes.templateDir}/simple/scripting-events.ftl" />
+    <#include "/${attributes.templateDir}/simple/common-attributes.ftl" />
+    <#include "/${attributes.templateDir}/simple/dynamic-attributes.ftl" />
     ><#rt/>
-        <a id="${parameters.id}_a" href="#">
-		    ${parameters.title}
+        <a id="${attributes.id}_a" href="#">
+		    ${attributes.title}
         </a>
-	</${parameters.header?default('h3')}>
-	<div id="${parameters.id}_div"><#rt/>
-<#if parameters.value?if_exists != "">
-			${parameters.value}
-</#if>			
+	</${attributes.header?default('h3')}>
+	<div id="${attributes.id}_div"><#rt/>
+<#if attributes.value?if_exists != "">
+			${attributes.value}
+</#if>
